@@ -1,0 +1,39 @@
+{
+    "extends": [
+        "airbnb-base",
+        "plugin:prettier/recommended"
+    ],
+    "env": {
+        "browser": true,
+        "node": true,
+        "jest": false
+    },
+    "rules": {
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "strict": "off",
+        "no-use-before-define": "off",
+        "dot-notation": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "varsIgnorePattern": "_$"
+            }
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "printWidth": 120
+            }
+        ]
+    },
+    "plugins": [
+        "prettier"
+    ]
+}
