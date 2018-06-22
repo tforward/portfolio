@@ -6,3 +6,44 @@ html {
   *, *:before, *:after {
     box-sizing: inherit;
   }
+
+  .hero {
+    display: grid;
+    height: 95vh;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+  }
+
+  h1 {
+    font-size: 10vmin;
+    margin: auto;
+    position: absolute;
+    top: 25%;
+    left: -28.5%;
+  }
+
+  h2 {
+    font-size: 4vmin;
+    margin: auto;
+    position: absolute;
+    top: 20%;
+    left: -14%;
+  }
+
+  h1::after {
+    content: "";
+    border: 0.1vmin solid black;
+    position: absolute;
+    bottom: 10%;
+    left: 14%;
+    right: 1%;
+  }
+
+  .headplaceholder {
+    width: 60vmin;
+    height: 60vmin;
+    border-radius: 50%;
+    background-color: lightblue;
+    position: relative;
+   }
