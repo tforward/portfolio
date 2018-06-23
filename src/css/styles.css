@@ -7,43 +7,102 @@ html {
     box-sizing: inherit;
   }
 
-  .hero {
-    display: grid;
-    height: 95vh;
-    align-items: center;
-    justify-items: center;
-    position: relative;
+body {
+  margin: 0;
+}
+
+.summary {
+  background-color: lightblue;
+  height: 30vh;
+}
+
+.hero {
+  display: grid;
+  height: 94vh;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+}
+
+.hero::after,
+.hero::before {
+  position: absolute; 
+  content: '';
+  width: 8rem;
+  height: 8rem;
+  background: white;
+  bottom: -1em;
+  z-index: 0;
+}
+
+.hero::before {
+  right: 50%;
+  transform: skew(0, 20deg);
+}
+
+.hero::after {
+  left: 50%;
+  transform: skew(0, -20deg);
+}
+
+
+
+h1 {
+  font-size: 10vmin;
+  margin: auto;
+  position: relative;
+  top: 25%;
+  left: -28.5%;
+  z-index: 2001;
+}
+
+h2 {
+  font-size: 4vmin;
+  margin: auto;
+  position: relative;
+  top: 20%;
+  left: -14%;
+  z-index: 2001;
+}
+
+h1::after {
+  content: "";
+  border: 0.1vmin solid black;
+  position: relative;
+  bottom: 10%;
+  left: 14%;
+  right: 1%;
+}
+
+.map-pos {
+  position: relative;
+  left: 6%;
+}
+
+.maphead-bc {
+  background-color: #61DFE4;
+  background-size: contain;
+}
+
+#map {
+  z-index: 1;
+}
+
+.maphead {
+  width: 70vmin;
+  height: 70vmin;
+  position: relative;
+  background: url("../images/maphead.svg");
+  background-size: contain;
+  z-index: 1001;
+  }
+  
+
+.leaflet-bottom {
+  z-index: -1;
   }
 
-  h1 {
-    font-size: 10vmin;
-    margin: auto;
-    position: absolute;
-    top: 25%;
-    left: -28.5%;
-  }
 
-  h2 {
-    font-size: 4vmin;
-    margin: auto;
-    position: absolute;
-    top: 20%;
-    left: -14%;
+  .summary {
+    z-index: -10;
   }
-
-  h1::after {
-    content: "";
-    border: 0.1vmin solid black;
-    position: absolute;
-    bottom: 10%;
-    left: 14%;
-    right: 1%;
-  }
-
-  .headplaceholder {
-    width: 60vmin;
-    height: 60vmin;
-    border-radius: 50%;
-    background-color: lightblue;
-    position: relative;
-   }

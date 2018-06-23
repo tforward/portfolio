@@ -1,9 +1,11 @@
 "use strict";
 
+import png_ from "../images/maphead.svg";
 import css_ from "../css/styles.css";
 import { EventDelegator, getTargetId } from "./olooEvent";
 import { SubscribersDelegator } from "./olooObserver";
 import { ElementDelegator, initElemObjects } from "./olooElem";
+import leaflet_ from "./leafletembed";
 
 const myBase = Object.create(null);
 const myApp = SubscribersDelegator();
