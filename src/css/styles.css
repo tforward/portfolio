@@ -11,66 +11,53 @@ body {
   margin: 0;
 }
 
-.summary {
-  background-color: lightblue;
-  height: 30vh;
-}
-
+/* HERO */
 .hero {
   display: grid;
-  height: 94vh;
+  height: 90vh;
   align-items: center;
   justify-items: center;
   position: relative;
 }
 
-.hero::after,
-.hero::before {
-  position: absolute; 
-  content: '';
-  width: 8rem;
-  height: 8rem;
-  background: white;
-  bottom: -1em;
-  z-index: 0;
+.title-info {
+  display: flex;
+  position: absolute;
+  top: 70%;
+  left: -9vmin;
+  height: 6vmin;
+  z-index: 2001;
 }
-
-.hero::before {
-  right: 50%;
-  transform: skew(0, 20deg);
-}
-
-.hero::after {
-  left: 50%;
-  transform: skew(0, -20deg);
-}
-
-
 
 h1 {
-  font-size: 10vmin;
+  font-size: 9vmin;
   margin: auto;
-  position: relative;
-  top: 25%;
-  left: -28.5%;
+  position: absolute;
+  top: 55%;
+  left: -20vmin;
   z-index: 2001;
 }
 
 h2 {
   font-size: 4vmin;
+}
+
+.title-name {
   margin: auto;
-  position: relative;
-  top: 20%;
-  left: -14%;
+  position: absolute;
+  top: 51%;
+  left: -9vmin;
   z-index: 2001;
 }
+
+
 
 h1::after {
   content: "";
   border: 0.1vmin solid black;
-  position: relative;
+  position: absolute;
   bottom: 10%;
-  left: 14%;
+  left: 10%;
   right: 1%;
 }
 
@@ -85,12 +72,14 @@ h1::after {
 }
 
 #map {
+  width: 59vmin;
+  height: 65vmin;
   z-index: 1;
 }
 
 .maphead {
-  width: 70vmin;
-  height: 70vmin;
+  width: 65vmin;
+  height: 65vmin;
   position: relative;
   background: url("../images/maphead.svg");
   background-size: contain;
@@ -102,7 +91,58 @@ h1::after {
   z-index: -1;
   }
 
+/* CONTACTS */
 
-  .summary {
-    z-index: -10;
-  }
+.btn {
+  position: relative;
+  font-size: 5vmin;
+  margin: 0.3vmin 0.5vmin;
+  top: 0;
+  transition: top ease-in 250ms;
+}
+
+.btn:hover {
+  top: -0.5vmin;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: black;
+}
+
+/* SUMMARY */
+
+.summary {
+  background-color: lightblue;
+  height: 30vh;
+}
+
+.summary {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  z-index: -10;
+}
+
+.summary::before {
+  overflow: auto;
+  position: relative;
+  content: '';
+  border-style: solid;
+  border-width: 7vh calc(10vmin + 6em) 0 calc(10vmin + 6em);
+  border-color:white transparent transparent transparent;
+  bottom: 1.3em;
+}
+
+
+
+/* UTILITY */
+.noSelect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
