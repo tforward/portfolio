@@ -1,5 +1,14 @@
 /* CSS */
 
+:root {
+  /* COLOURS */
+  --lightblue: #61DFE4;
+  --lightgreen: #f1ffe9;
+
+  /*LINES*/
+  --lightline: 0.1vmin;
+}
+
 html {
     box-sizing: border-box;
   }
@@ -9,7 +18,20 @@ html {
 
 body {
   margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+/* META */
+
+.border {
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.pad1 {
+  padding: 1rem;
+}
+
 
 /* HERO */
 .hero {
@@ -40,6 +62,14 @@ h1 {
 
 h2 {
   font-size: 4vmin;
+  margin: 1vmin;
+  position: relative;
+}
+
+h4 {
+  margin: 1vmin;
+  font-size: calc(1vmin + 0.5rem);
+  line-height: calc(3vmin + 0.5rem);
 }
 
 .title-name {
@@ -50,11 +80,9 @@ h2 {
   z-index: 2001;
 }
 
-
-
 h1::after {
   content: "";
-  border: 0.1vmin solid black;
+  border: var(--lightline) solid black;
   position: absolute;
   bottom: 10%;
   left: 10%;
@@ -67,7 +95,6 @@ h1::after {
 }
 
 .maphead-bc {
-  background-color: #61DFE4;
   background-size: contain;
 }
 
@@ -81,6 +108,8 @@ h1::after {
   width: 65vmin;
   height: 65vmin;
   position: relative;
+  /* Backup colour */
+  background-color: var(--lightblue);
   background: url("../images/maphead.svg");
   background-size: contain;
   z-index: 1001;
@@ -113,11 +142,10 @@ h1::after {
 /* SUMMARY */
 
 .summary {
-  background-color: lightblue;
-  height: 30vh;
-}
-
-.summary {
+  background-color: var(--lightblue);
+  height: 40vh;
+  background: url("../images/topography.svg");
+  background-color: var(--lightgreen);
   display: grid;
   align-items: center;
   justify-items: center;
@@ -131,7 +159,72 @@ h1::after {
   border-style: solid;
   border-width: 7vh calc(10vmin + 6em) 0 calc(10vmin + 6em);
   border-color:white transparent transparent transparent;
-  bottom: 1.3em;
+  bottom: 1.55em;
+}
+
+.sum-middle {
+  /* Fallback for web browsers that don't support RGBa */
+  background-color: rgb(255, 255, 255);
+  /* RGBa with 0.6 opacity */
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1vmin 3vmin;
+  border: 0.04em solid black;
+  border-radius: 3vmin; 
+  text-align: center;
+  width: 50vmin;
+  top: -2vmin;
+  position: relative;
+}
+
+/* PROJECTS */
+
+.projects {
+  height: 80vh;
+  width: 100%;
+  /* display: grid;
+  grid-template-columns: 2fr 5fr 1fr 5fr 2fr;
+  grid-template-rows: auto; */
+}
+
+.card {
+  height: 600px;
+  width: 400px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 6fr 4fr 1fr;
+  grid-template-areas: 
+  "title title title"
+  "content content content"
+  "desc desc desc"
+  ". . meta";
+}
+
+.card-title {
+  grid-area: title;
+}
+
+.card-content {
+  grid-area: content;
+  width: 100%;
+  height: 100%;
+  background-color: #61DFE4;
+}
+
+.card-desc {
+  grid-area: desc;
+}
+
+
+
+
+
+.center {
+  width: 100%;
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -145,4 +238,10 @@ h1::after {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+.boxShadow {
+  -webkit-box-shadow: 3px 4px 12px 0px rgba(50, 50, 50, 0.4);
+  -moz-box-shadow:    3px 4px 12px 0px rgba(50, 50, 50, 0.4);
+  box-shadow:         3px 4px 12px 0px rgba(50, 50, 50, 0.4);
 }
