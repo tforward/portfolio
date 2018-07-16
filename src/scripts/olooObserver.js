@@ -9,13 +9,14 @@ export function SubscribersDelegator() {
     this.obj = Object.create(null);
     delete Subscribe.init;
   };
-  Subscribe.subscribe = function subscribe(item) {
-    this[item.id] = item;
+  Subscribe.subscribe = function subscribe(id, data) {
+    if (this.obj[id] === undefined) {
+      this.obj[id] = data;
+    } else {
+      this.obj[id].push(data);
+    }
   };
-  // Use addItems when you want to subscribe many items
-  Subscribe.addObjs = function addObjs(items) {
-    items.forEach(item => Subscribe.subscribe(item));
-  };
+
   Subscribe.unsubscribe = function unsubscribe(items) {
     // Can unsubscribe one observer, or an array of observers
     if (typeof items === "string") {
@@ -35,17 +36,4 @@ export function SubscribersDelegator() {
     }
   };
   return Subscribe;
-}
-
-// ======================================================================
-// Observer Delegator Utilities
-// ======================================================================
-
-export function createObserversById(subscriber, ids, delegator) {
-  ids.forEach(elemId => {
-    const elem = document.getElementById(elemId);
-    const observer = delegator();
-    observer.init(elemId, elem);
-    subscriber.subscribe(observer);
-  });
 }

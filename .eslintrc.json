@@ -9,6 +9,7 @@
         "jest": false
     },
     "rules": {
+        "import/prefer-default-export": "off",
         "quotes": [
             "error",
             "double"

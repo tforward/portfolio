@@ -14,6 +14,34 @@ const myApp = SubscribersDelegator();
 myBase.initApplication = function init() {
   myApp.init();
 
+  function ProjectDelegator() {
+    const Project = Object.create(null);
+
+    Project.setContent = function content(data) {
+      this.title = data.title;
+      this.img = data.img;
+      this.url = data.url;
+      this.desc = data.desc;
+      this.tags = data.tags;
+    };
+
+    return Project;
+  }
+
+  const projects = initElemObjects(["calc", "test"], "div", ElementDelegator, ProjectDelegator);
+
+  myApp.subscribe("projects", projects);
+  const project = myApp.obj.projects;
+
+  project.calc.setContent({ title: "Calculator", desc: "A calculator build with love" });
+  console.log(project.calc);
+
+  const projectBase = document.getElementById("projects");
+
+  project.calc.elem.className = "card pad1 boxShadow";
+
+  projectBase.appendChild(project.calc.elem);
+
   //   const eventSandbox = EventDelegator();
   //   eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });
   //   eventSandbox.addEvent(eventController);

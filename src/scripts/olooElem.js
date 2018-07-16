@@ -10,27 +10,32 @@ export function ElementDelegator(proto = null) {
   Element.create = function create(elemId, type) {
     this.elem = document.createElement(type);
     this.elem.id = elemId;
-    this.id = elemId;
-    this.toggle = 0;
+    Element.props(elemId);
     Element.gc(["init", "create"]);
   };
   // Use "init" when working with an existing element
   Element.init = function init(elemId) {
-    this.id = elemId;
-    this.elem = document.getElementById(this.id);
+    this.elem = document.getElementById(elemId);
     if (this.elem === null) {
-      console.log(`Init Error: No element with id "${this.id}"`);
+      console.log(`Init Error: No element with id: "${elemId}"`);
     }
+    Element.props(elemId);
     // After creation garbage collected init/create
     Element.gc(["init", "create"]);
   };
+  Element.props = function props(elemId) {
+    this.id = elemId;
+    this.toggle = 0;
+  };
   // Garbage Collect
+  // After a element is created or init we can delete these properties as
+  // they will no longer be used in the life cycles of the Element
   Element.gc = function gc(items) {
     items.forEach(item => {
       delete Element[item];
     });
     // Delete gc itself
-    delete Element.gc;
+    // delete Element.gc;
   };
   return Element;
 }
@@ -39,9 +44,12 @@ export function ElementDelegator(proto = null) {
 // Delegated Element Utilities
 // ======================================================================
 
-export function initElemObjects(ids, delegator, proto = null) {
+export function initElemObjects(ids, elemType, delegator, proto = null, create = true) {
   // Used for quickly initiating Element delegated objects
-  // Can accept another proto delegator
+  //  delegator: The delegator to assign to the returned object
+  //  proto: [Optional] The prototype to give the object
+  //  Can accept another proto delegator
+  //  Typically good idea to assign the return object to the Subscribers.addObjs property
   const objs = [];
   let obj;
   ids.forEach(id => {
@@ -50,8 +58,12 @@ export function initElemObjects(ids, delegator, proto = null) {
     } else {
       obj = delegator(proto());
     }
-    obj.init(id);
-    objs.push(obj);
+    if (create) {
+      obj.create(id, elemType);
+    } else {
+      obj.init(id);
+    }
+    objs[id] = obj;
   });
   return objs;
 }
