@@ -34,7 +34,6 @@ myBase.initApplication = function init() {
   const project = myApp.obj.projects;
 
   project.calc.setContent({ title: "Calculator", desc: "A calculator build with love" });
-  console.log(project.calc);
 
   const projectBase = document.getElementById("projects");
 
