@@ -14,32 +14,58 @@ const myApp = SubscribersDelegator();
 myBase.initApplication = function init() {
   myApp.init();
 
-  function ProjectDelegator() {
-    const Project = Object.create(null);
-
-    Project.setContent = function content(data) {
-      this.title = data.title;
-      this.img = data.img;
-      this.url = data.url;
-      this.desc = data.desc;
-      this.tags = data.tags;
+  const createCard = function card(id) {
+    const state = {
+      id,
+      elem: document.createElement("div"),
+      title: document.createElement("h2"),
+      desc: document.createElement("p"),
+      data: Object.create(null)
     };
+    // If you add an object to create it will show up on the __proto__
+    // for that object, default null.
+    return Object.assign(Object.create(state), contentManager(state));
+  };
 
-    return Project;
+  function contentManager(state, proto = null) {
+    const Content = Object.create(proto);
+    Content.setText = (elem, value) => {
+      elem.textContent = value;
+    };
+    Content.setClass = (elem, classname) => {
+      elem.className = classname;
+    };
+    return Content;
   }
 
-  const projects = initElemObjects(["calc", "test"], "div", ElementDelegator, ProjectDelegator);
+  function defineCard({ _card, _title, _desc }) {
+    createElems({ _card, _title, _desc });
+    const card = createCard("card-calc");
+    card.elem.className = _card.classname;
 
-  myApp.subscribe("projects", projects);
-  const project = myApp.obj.projects;
+    card.title.textContent = _title.textContent;
+    card.title.className = _title.classname;
 
-  project.calc.setContent({ title: "Calculator", desc: "A calculator build with love" });
+    card.desc.textContent = _desc.textContent;
+    return card;
+  }
 
-  const projectBase = document.getElementById("projects");
+  const calcCard = {
+    _card: { elem: "div", classname: "card pad1 boxShadow" },
+    _title: { elem: "h2", textContent: "Calculator", classname: "card-title pad1" },
+    _desc: { elem: "p", textContent: "A calculator build with love", classname: "card-desc pad1" }
+  };
 
-  project.calc.elem.className = "card pad1 boxShadow";
+  const x = defineCard(calcCard);
 
-  projectBase.appendChild(project.calc.elem);
+  const projects = document.getElementById("projects");
+  projects.appendChild(x.elem);
+  x.elem.appendChild(x.title);
+  x.elem.appendChild(x.desc);
+
+  function createElems(...args) {
+    console.log(...args);
+  }
 
   //   const eventSandbox = EventDelegator();
   //   eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });
