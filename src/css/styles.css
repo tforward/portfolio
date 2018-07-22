@@ -200,7 +200,7 @@ h1::after {
   grid-template-rows: 1fr 3fr 2fr 1fr;
   grid-template-areas: 
   "title title title"
-  "content content content"
+  ". image ."
   "desc desc desc"
   ". . meta";
   transition: all 0.3s ease-in;
@@ -210,9 +210,11 @@ h1::after {
   grid-area: title;
 }
 
-.card-content {
-  grid-area: content;
+.card-img {
+  grid-area: image;
   background-color: #61DFE4;
+  width: 100%;
+  justify-self: center;
 }
 
 .card-desc {
