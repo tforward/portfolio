@@ -17,14 +17,26 @@ myBase.initApplication = function init() {
   const createCard = function card(elemId) {
     // Just use the same syntax for node elements
     const state = {
-      card: { elem: "div", id: elemId, className: "card pad1 boxShadow" },
-      title: { elem: "h2", textContent: "Calculator", className: "card-title pad1" },
+      card: { elem: "div", id: elemId, className: "card" },
+      cardText: { elem: "div", className: "card-text" },
+      title: { elem: "h3", textContent: "Calculator", className: "card-title" },
+      imgFrame: { elem: "div", className: "card-img-frame center" },
+      imgBox: { elem: "div", className: "card-img-box" },
       img: { elem: "img", className: "card-img", src: "../images/calculator.jpg", alt: "A Calculator" },
-      desc: { elem: "p", textContent: "A calculator build with love", className: "card-desc pad1" }
+      imgOverlay: { elem: "div", className: "card-img-overlay" },
+      imgOverlayDemo: { elem: "button", className: "card-img-overlay-btn center demo", textContent: "Demo" },
+      imgOverlayCode: { elem: "button", className: "card-img-overlay-btn center code", textContent: "Code" },
+      desc: { elem: "p", textContent: "A calculator build with love", className: "card-desc" }
     };
     const addContent = () => ({
       appendContent: function appendContent(parent) {
-        const content = this.addFragments([this.title, this.img, this.desc]);
+        const textContent = this.addFragments([this.title, this.desc]);
+        this.cardText.elem.appendChild(textContent);
+        const imgOverlayContent = this.addFragments([this.imgOverlayDemo, this.imgOverlayCode]);
+        this.imgOverlay.elem.appendChild(imgOverlayContent);
+        const imgFrameContent = this.addFragments([this.imgBox, this.img, this.imgOverlay]);
+        this.imgFrame.elem.appendChild(imgFrameContent);
+        const content = this.addFragments([this.imgFrame, this.cardText]);
         this.card.elem.appendChild(content);
         parent.appendChild(this.card.elem);
       }
@@ -34,11 +46,11 @@ myBase.initApplication = function init() {
     return Object.assign(Object.create(state), addContent(), ElemDelegator(state), FragmentDelegator(state));
   };
 
-  const x = createCard("card-calc");
-  x.createElems();
+  const cardCalc = createCard("card-calc");
+  cardCalc.createElems();
 
   const projects = document.getElementById("projects");
-  x.appendContent(projects);
+  cardCalc.appendContent(projects);
 
   //   const eventSandbox = EventDelegator();
   //   eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });

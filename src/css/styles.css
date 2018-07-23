@@ -5,20 +5,19 @@
 
 :root {
   /* COLOURS */
-  --lightblue: #61DFE4;
-  --lightgreen: #f1ffe9;
+  --lightblue: #EFF4FA;
+  --lightgreen: #F7F8EC;
 
   /*LINES*/
   --lightline: 0.1vmin;
+
+  /*Padding*/
+  --padding: 1.36em;
 }
 
-html {
-    box-sizing: border-box;
-
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 
 body {
@@ -31,7 +30,7 @@ body {
 /* META */
 
 .pad1 {
-  padding: 1rem;
+  padding: var(--padding);
 }
 
 
@@ -129,11 +128,11 @@ h1::after {
   font-size: 5vmin;
   margin: 0.3vmin 0.5vmin;
   top: 0;
-  transition: top ease-in 250ms;
+  transition: top ease-in 200ms;
 }
 
 .btn:hover {
-  top: -0.5vmin;
+  top: -2px;
 }
 
 .contact-link {
@@ -144,10 +143,9 @@ h1::after {
 /* SUMMARY */
 
 .summary {
-  background-color: var(--lightblue);
   height: 40vh;
   background: url("../images/topography.svg");
-  background-color: var(--lightgreen);
+  background-color: #F9F1EA;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -181,55 +179,141 @@ h1::after {
 /* PROJECTS */
 
 .projects {
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  padding: var(--padding);
 }
 
 .projects-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 165vmin;
   display: grid;
-  grid-column: 2;
-  grid-template-columns: repeat(auto-fit, minmax(calc(30.5vmin + 4vh), 1fr));
-  grid-auto-rows: minmax(auto, 1fr);
-  grid-gap: 5vmin;
-  margin: 5vmin 0;
+  
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: var(--padding);
+  grid-template-columns: repeat(auto-fit, minmax(calc(30.5vmin + 4vh), 4fr));
+}
+
+/* PROJECTS > CARDS */
+
+@media only screen and (min-width: 500px) {
+  .item-1 {
+  grid-column: 1/ span 2;
+  }
 }
 
 .card {
-  max-width: 400px;
-  display: grid;
-  grid-template-rows: 1fr 3fr 2fr 1fr;
-  grid-template-areas: 
-  "title title title"
-  ". image ."
-  "desc desc desc"
-  ". . meta";
-  transition: all 0.3s ease-in;
-}
-
-.card-title {
-  grid-area: title;
-}
-
-.card-img {
-  grid-area: image;
-  background-color: #61DFE4;
-  width: 100%;
-  justify-self: center;
-}
-
-.card-desc {
-  grid-area: desc;
+  min-height: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  text-decoration: none;
+  color: #444;
+  top: 0;
+  transition: all .1s ease-in;
+  position: relative;
 }
 
 .card:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  top: -2px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.12), 0 5px 6px rgba(0,0,0,0.24);
+}
+
+.card-text {
+  padding: 0 var(--padding) var(--padding) var(--padding);
+}
+
+.card-title {
+  position: relative;
+  display: inline-block;
+}
+
+.card-title::after {  
+  content: '';
+  background: rgb(224, 224, 224);
+  display: block;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.card-img-frame {
+  /* grid-area: image;*/
+  background-color: #FFFCF2;
+  position: relative;
+  opacity: 1;
+  transition: all ease-in 250ms;
+}
+
+.card-img-box {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all ease-in 250ms;
+}
+
+.card-img-frame:hover .card-img-box {
+  opacity: 0.4;
+  background-color: var(--lightgreen);
+}
+
+.card-img-frame:hover .card-img-overlay {
+  opacity: 1;
+}
+
+.card-img {
+  width: 12em;
+  padding: var(--padding);
+  display: block;
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: block;
+  opacity: 0;
+  transition: opacity ease-in 450ms;
+}
+
+
+.card-img-overlay-btn {
+  position: relative;
+  margin: 0.4em 0;
+  color: white;
+  width: 4em; 
+  border: none;
+  border-radius: 7%; 
+  padding: 6px 8px;
+}
+
+.code {
+  background-color: #4FAAEB;
+}
+
+.code:hover {
+  background-color: rgb(31, 152, 238);
 }
 
 
 
+.demo {
+  background-color: #5FAD56;
+}
+
+
+
+.card-desc {
+  /* grid-area: desc; */
+}
+
+
+/* FOOTER */
+
 .footer {
   height: 50vmin;
-  background-color: lightblue;
+  background-color: #ECF7FC;
   flex-shrink: 0;
 }
 
@@ -252,6 +336,6 @@ h1::after {
                                   supported by Chrome and Opera */
 }
 
-.boxShadow {
+/* .boxShadow {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
+} */
