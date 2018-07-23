@@ -286,6 +286,7 @@ h1::after {
   border: none;
   border-radius: 7%; 
   padding: 6px 8px;
+  cursor: pointer; 
 }
 
 .code {
@@ -296,10 +297,12 @@ h1::after {
   background-color: rgb(31, 152, 238);
 }
 
-
-
 .demo {
   background-color: #5FAD56;
+}
+
+.demo:hover {
+  background-color: rgb(81, 155, 73);
 }
 
 
