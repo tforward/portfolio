@@ -14,7 +14,7 @@ const myApp = SubscribersDelegator();
 myBase.initApplication = function init() {
   myApp.init();
 
-  const createCard = function card(elemId) {
+  const createCard = function card(elemId, demoUrl, codeUrl, tools) {
     // Just use the same syntax for node elements
     const state = {
       card: { elem: "div", id: elemId, className: "card" },
@@ -24,20 +24,21 @@ myBase.initApplication = function init() {
       imgBox: { elem: "div", className: "card-img-box" },
       img: { elem: "img", className: "card-img", src: "../images/calculator.jpg", alt: "A Calculator" },
       imgOverlay: { elem: "div", className: "card-img-overlay" },
-      imgOverlayDemo: { elem: "button", className: "card-img-overlay-btn center demo", textContent: "Demo" },
-      imgOverlayCode: { elem: "button", className: "card-img-overlay-btn center code", textContent: "Code" },
-      desc: { elem: "p", textContent: "A calculator build with love", className: "card-desc" }
+      btnDemoUrl: { elem: "a", className: "noTextDecoration", href: demoUrl, target: "_blank" },
+      btnCodeUrl: { elem: "a", className: "noTextDecoration", href: codeUrl, target: "_blank" },
+      btnDemo: { elem: "button", className: "card-img-overlay-btn center demo", textContent: "Demo" },
+      btnCode: { elem: "button", className: "card-img-overlay-btn center code", textContent: "Code" },
+      desc: { elem: "p", textContent: "A calculator build with love", className: "card-desc" },
+      toolbox: { elem: "p", textContent: tools }
     };
     const addContent = () => ({
       appendContent: function appendContent(parent) {
-        const textContent = this.addFragments([this.title, this.desc]);
-        this.cardText.elem.appendChild(textContent);
-        const imgOverlayContent = this.addFragments([this.imgOverlayDemo, this.imgOverlayCode]);
-        this.imgOverlay.elem.appendChild(imgOverlayContent);
-        const imgFrameContent = this.addFragments([this.imgBox, this.img, this.imgOverlay]);
-        this.imgFrame.elem.appendChild(imgFrameContent);
-        const content = this.addFragments([this.imgFrame, this.cardText]);
-        this.card.elem.appendChild(content);
+        this.cardText.elem.appendChild(this.addElem([this.title, this.desc, this.toolbox]));
+        this.btnDemoUrl.elem.appendChild(this.btnDemo.elem);
+        this.btnCodeUrl.elem.appendChild(this.btnCode.elem);
+        this.imgOverlay.elem.appendChild(this.addElem([this.btnDemoUrl, this.btnCodeUrl]));
+        this.imgFrame.elem.appendChild(this.addElem([this.imgBox, this.img, this.imgOverlay]));
+        this.card.elem.appendChild(this.addElem([this.imgFrame, this.cardText]));
         parent.appendChild(this.card.elem);
       }
     });
@@ -46,7 +47,12 @@ myBase.initApplication = function init() {
     return Object.assign(Object.create(state), addContent(), ElemDelegator(state), FragmentDelegator(state));
   };
 
-  const cardCalc = createCard("card-calc");
+  const cardCalc = createCard(
+    "card-calc",
+    "https://tforward.github.io/JSCalculator/",
+    "https://github.com/tforward/JSCalculator",
+    "HTML, CSS (Flexbox), JS (esLint)"
+  );
   cardCalc.createElems();
 
   const projects = document.getElementById("projects");

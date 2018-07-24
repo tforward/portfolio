@@ -24,9 +24,18 @@ export function ElemDelegator(state) {
 export function FragmentDelegator() {
   const FragmentDele = Object.create(null);
 
-  FragmentDele.addFragments = function addFragments(items) {
+  FragmentDele.addElem = function addElem(items) {
+    // items: Array of either HTMLElements, other fragments with contents, or
+    // an Object with a "obj.elem" property with a HTMLElement inside
+
     const fragment = document.createDocumentFragment();
-    items.forEach(item => fragment.appendChild(item.elem));
+    items.forEach(item => {
+      if (item.constructor.name === "DocumentFragment" || item.constructor.name.match(/HTML\w*Element/) != null) {
+        fragment.appendChild(item);
+      } else {
+        fragment.appendChild(item.elem);
+      }
+    });
     return fragment;
   };
   return FragmentDele;
