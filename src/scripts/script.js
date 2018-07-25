@@ -14,23 +14,24 @@ const myApp = SubscribersDelegator();
 myBase.initApplication = function init() {
   myApp.init();
 
-  const createCard = function card(elemId, demoUrl, codeUrl, tools) {
+  const createCard = function card(data) {
     // Just use the same syntax for node elements
     const state = {
-      card: { elem: "div", id: elemId, className: "card" },
+      card: { elem: "div", id: data.elemId, className: data.cardClass },
       cardText: { elem: "div", className: "card-text" },
-      title: { elem: "h3", textContent: "Calculator", className: "card-title" },
+      title: { elem: "h3", textContent: data.title, className: "card-title" },
       imgFrame: { elem: "div", className: "card-img-frame center" },
       imgBox: { elem: "div", className: "card-img-box" },
-      img: { elem: "img", className: "card-img", src: "../images/calculator.jpg", alt: "A Calculator" },
+      img: { elem: "img", className: data.imgClass, src: `../images/${data.imageName}.jpg` },
       imgOverlay: { elem: "div", className: "card-img-overlay" },
-      btnDemoUrl: { elem: "a", className: "noTextDecoration", href: demoUrl, target: "_blank" },
-      btnCodeUrl: { elem: "a", className: "noTextDecoration", href: codeUrl, target: "_blank" },
+      btnDemoUrl: { elem: "a", className: "noTextDecoration", href: data.demoUrl, target: "_blank" },
+      btnCodeUrl: { elem: "a", className: "noTextDecoration", href: data.codeUrl, target: "_blank" },
       btnDemo: { elem: "button", className: "card-img-overlay-btn center demo", textContent: "Demo" },
       btnCode: { elem: "button", className: "card-img-overlay-btn center code", textContent: "Code" },
-      desc: { elem: "p", textContent: "A calculator build with love", className: "card-desc" },
-      toolbox: { elem: "p", textContent: tools }
+      desc: { elem: "p", textContent: data.description, className: "card-desc" },
+      toolbox: { elem: "p", textContent: data.tools }
     };
+    // TODO Make this more modular
     const addContent = () => ({
       appendContent: function appendContent(parent) {
         this.cardText.elem.appendChild(this.addElem([this.title, this.desc, this.toolbox]));
@@ -47,16 +48,83 @@ myBase.initApplication = function init() {
     return Object.assign(Object.create(state), addContent(), ElemDelegator(state), FragmentDelegator(state));
   };
 
-  const cardCalc = createCard(
-    "card-calc",
-    "https://tforward.github.io/JSCalculator/",
-    "https://github.com/tforward/JSCalculator",
-    "HTML, CSS (Flexbox), JS (esLint)"
-  );
+  // TODO Have these on a seperate page and import them
+  // TODO item-1 classname thing
+  const cardCalc = createCard({
+    elemId: "card-calc",
+    title: "Calculator",
+    description: "A Responsive Formula Expression Logic Calculator",
+    demoUrl: "https://tforward.github.io/JSCalculator/",
+    codeUrl: "https://github.com/tforward/JSCalculator",
+    tools: "HTML, CSS (Grid), JS (esLint)",
+    imageName: "calculator",
+    imgClass: "card-img-portrait",
+    cardClass: "card"
+  });
   cardCalc.createElems();
 
+  const cardTwitch = createCard({
+    elemId: "card-twitch",
+    title: "Twitch Viewer",
+    description: "A Twitch API Responsive Viewer",
+    demoUrl: "https://tforward.github.io/fccTwitchTV/",
+    codeUrl: "https://github.com/tforward/fccTwitchTV",
+    tools: "HTML, CSS (Flexbox), JS (esLint), Webpack, Twitch API",
+    imageName: "twitch",
+    imgClass: "card-img-landscape",
+    // Need image cover
+    cardClass: "card cardSpan2"
+  });
+  cardTwitch.createElems();
+
+  const cardPomodoro = createCard({
+    elemId: "card-pomodoro",
+    title: "Pomodoro Clock",
+    description: "A Responsive Pomodoro Clock",
+    demoUrl: "https://tforward.github.io/fccPomodoro/",
+    codeUrl: "https://github.com/tforward/fccPomodoro",
+    tools: "HTML, CSS (Flexbox, Grid, Variables), JS (esLint), Webpack"
+  });
+  cardPomodoro.createElems();
+
+  const cardGridImage = createCard({
+    elemId: "card-gridImage",
+    title: "Grid 5x5",
+    description: "A just for fun experiment with CSS Grid",
+    demoUrl: "https://tforward.github.io/gridImage/",
+    codeUrl: "https://github.com/tforward/gridImage",
+    tools: "HTML, CSS (Flexbox, Grid), JS (esLint), Webpack"
+  });
+  cardGridImage.createElems();
+
+  const cardSimon = createCard({
+    elemId: "card-simon",
+    title: "Simon Game",
+    description: "The classic 1980's game Simon",
+    demoUrl: "https://tforward.github.io/fccSimon/",
+    codeUrl: "https://github.com/tforward/fccSimon",
+    tools: "HTML, CSS (Flexbox), JS (esLint), Webpack"
+  });
+  cardSimon.createElems();
+
+  const cardTicTac = createCard({
+    elemId: "card-tictac",
+    title: "Tic Tac Toe Game",
+    description: "The always classic Tic Tac Toe!",
+    demoUrl: "https://tforward.github.io/fccTicTacToe/",
+    codeUrl: "https://github.com/tforward/fccTicTacToe",
+    tools: "HTML, CSS (Flexbox), JS (esLint), Gulp"
+  });
+  cardTicTac.createElems();
+
   const projects = document.getElementById("projects");
+  // TODO Create a function to semi randomly order the projects or similar
+  cardPomodoro.appendContent(projects);
   cardCalc.appendContent(projects);
+  cardTwitch.appendContent(projects);
+  cardGridImage.appendContent(projects);
+  cardSimon.appendContent(projects);
+  cardTicTac.appendContent(projects);
 
   //   const eventSandbox = EventDelegator();
   //   eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });

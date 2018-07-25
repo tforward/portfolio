@@ -212,6 +212,10 @@ h1::after {
   position: relative;
 }
 
+.cardSpan2{
+  grid-column: span 2;
+}
+
 .card:hover {
   top: -2px;
   box-shadow: 0 1px 8px rgba(0,0,0,0.12), 0 5px 6px rgba(0,0,0,0.24);
@@ -261,9 +265,15 @@ h1::after {
   opacity: 1;
 }
 
-.card-img {
-  width: 12em;
+.card-img-portrait {
+  max-width: 80%;
   padding: var(--padding);
+  display: block;
+}
+
+.card-img-landscape {
+  max-width: 100%;
+  padding: var(--padding) 0;
   display: block;
 }
 
