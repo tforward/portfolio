@@ -28,8 +28,8 @@ myBase.initApplication = function init() {
       btnCodeUrl: { elem: "a", className: "noTextDecoration", href: data.codeUrl, target: "_blank" },
       btnDemo: { elem: "button", className: "card-img-overlay-btn center demo", textContent: "Demo" },
       btnCode: { elem: "button", className: "card-img-overlay-btn center code", textContent: "Code" },
-      desc: { elem: "p", textContent: data.description, className: "card-desc" },
-      toolbox: { elem: "p", textContent: data.tools }
+      desc: { elem: "p", className: "card-desc", textContent: data.description },
+      toolbox: { elem: "p", className: "toolbox", textContent: data.tools }
     };
     // TODO Make this more modular
     const addContent = () => ({
@@ -50,6 +50,7 @@ myBase.initApplication = function init() {
 
   // TODO Have these on a seperate page and import them
   // TODO item-1 classname thing
+  //     // Need image cover
   const cardCalc = createCard({
     elemId: "card-calc",
     title: "Calculator",
@@ -72,7 +73,6 @@ myBase.initApplication = function init() {
     tools: "HTML, CSS (Flexbox), JS (esLint), Webpack, Twitch API",
     imageName: "twitch",
     imgClass: "card-img-landscape",
-    // Need image cover
     cardClass: "card cardSpan2"
   });
   cardTwitch.createElems();
@@ -83,7 +83,10 @@ myBase.initApplication = function init() {
     description: "A Responsive Pomodoro Clock",
     demoUrl: "https://tforward.github.io/fccPomodoro/",
     codeUrl: "https://github.com/tforward/fccPomodoro",
-    tools: "HTML, CSS (Flexbox, Grid, Variables), JS (esLint), Webpack"
+    imageName: "calculator",
+    imgClass: "card-img-portrait",
+    tools: "HTML, CSS (Flexbox, Grid, Variables), JS (esLint), Webpack",
+    cardClass: "card"
   });
   cardPomodoro.createElems();
 
@@ -93,7 +96,10 @@ myBase.initApplication = function init() {
     description: "A just for fun experiment with CSS Grid",
     demoUrl: "https://tforward.github.io/gridImage/",
     codeUrl: "https://github.com/tforward/gridImage",
-    tools: "HTML, CSS (Flexbox, Grid), JS (esLint), Webpack"
+    imageName: "calculator",
+    imgClass: "card-img-portrait",
+    tools: "HTML, CSS (Flexbox, Grid), JS (esLint), Webpack",
+    cardClass: "card"
   });
   cardGridImage.createElems();
 
@@ -103,7 +109,10 @@ myBase.initApplication = function init() {
     description: "The classic 1980's game Simon",
     demoUrl: "https://tforward.github.io/fccSimon/",
     codeUrl: "https://github.com/tforward/fccSimon",
-    tools: "HTML, CSS (Flexbox), JS (esLint), Webpack"
+    imageName: "calculator",
+    imgClass: "card-img-portrait",
+    tools: "HTML, CSS (Flexbox), JS (esLint), Webpack",
+    cardClass: "card"
   });
   cardSimon.createElems();
 
@@ -113,9 +122,25 @@ myBase.initApplication = function init() {
     description: "The always classic Tic Tac Toe!",
     demoUrl: "https://tforward.github.io/fccTicTacToe/",
     codeUrl: "https://github.com/tforward/fccTicTacToe",
-    tools: "HTML, CSS (Flexbox), JS (esLint), Gulp"
+    imageName: "calculator",
+    imgClass: "card-img-portrait",
+    tools: "HTML, CSS (Flexbox), JS (esLint), Gulp",
+    cardClass: "card"
   });
   cardTicTac.createElems();
+
+  const cardLeafshoot = createCard({
+    elemId: "card-leaf",
+    title: "LeafShoot",
+    description: "A responsive map template",
+    demoUrl: "https://tforward.github.io/LeafShoot/",
+    codeUrl: "https://github.com/tforward/LeafShoot",
+    imageName: "calculator",
+    imgClass: "card-img-portrait",
+    tools: "HTML, CSS (Bootstrap), JS (Leaflet)",
+    cardClass: "card"
+  });
+  cardLeafshoot.createElems();
 
   const projects = document.getElementById("projects");
   // TODO Create a function to semi randomly order the projects or similar
@@ -125,10 +150,11 @@ myBase.initApplication = function init() {
   cardGridImage.appendContent(projects);
   cardSimon.appendContent(projects);
   cardTicTac.appendContent(projects);
+  cardLeafshoot.appendContent(projects);
 
-  //   const eventSandbox = EventDelegator();
-  //   eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });
-  //   eventSandbox.addEvent(eventController);
+  // const eventSandbox = EventDelegator();
+  // eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });
+  // eventSandbox.addEvent(eventController);
 
   function eventController(args, e) {
     const id = getTargetId(e, args.tags);
