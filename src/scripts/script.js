@@ -152,6 +152,8 @@ myBase.initApplication = function init() {
   cardTicTac.appendContent(projects);
   cardLeafshoot.appendContent(projects);
 
+  // Band for differnet content (LATER)
+
   // const eventSandbox = EventDelegator();
   // eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });
   // eventSandbox.addEvent(eventController);
