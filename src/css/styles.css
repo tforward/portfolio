@@ -241,8 +241,8 @@ h1::after {
 }
 
 .card-img-frame {
-  /* grid-area: image;*/
-  background-color: #FFFCF2;
+  /* grid-area:  background-color: #FFFCF2;;*/
+  background-color: #FFF;
   position: relative;
   opacity: 1;
   transition: all ease-in 250ms;
@@ -266,15 +266,13 @@ h1::after {
 }
 
 .card-img-portrait {
-  max-width: 80%;
+  max-width: 100%;
   padding: var(--padding);
-  display: block;
 }
 
 .card-img-landscape {
   max-width: 100%;
-  padding: var(--padding) 0;
-  display: block;
+  padding: var(--padding);
 }
 
 .card-img-overlay {

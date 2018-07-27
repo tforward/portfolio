@@ -31,7 +31,6 @@ myBase.initApplication = function init() {
       desc: { elem: "p", className: "card-desc", textContent: data.description },
       toolbox: { elem: "p", className: "toolbox", textContent: data.tools }
     };
-    // TODO Make this more modular
     const addContent = () => ({
       appendContent: function appendContent(parent) {
         this.cardText.elem.appendChild(this.addElem([this.title, this.desc, this.toolbox]));
@@ -57,7 +56,7 @@ myBase.initApplication = function init() {
     description: "A Responsive Formula Expression Logic Calculator",
     demoUrl: "https://tforward.github.io/JSCalculator/",
     codeUrl: "https://github.com/tforward/JSCalculator",
-    tools: "HTML, CSS (Grid), JS (esLint)",
+    tools: "HTML, CSS (Grid), JS (ESLint)",
     imageName: "calculator",
     imgClass: "card-img-portrait",
     cardClass: "card"
@@ -70,7 +69,7 @@ myBase.initApplication = function init() {
     description: "A Twitch API Responsive Viewer",
     demoUrl: "https://tforward.github.io/fccTwitchTV/",
     codeUrl: "https://github.com/tforward/fccTwitchTV",
-    tools: "HTML, CSS (Flexbox), JS (esLint), Webpack, Twitch API",
+    tools: "HTML, CSS (Flexbox), JS (ESLint, Webpack, Twitch API)",
     imageName: "twitch",
     imgClass: "card-img-landscape",
     cardClass: "card cardSpan2"
@@ -83,9 +82,9 @@ myBase.initApplication = function init() {
     description: "A Responsive Pomodoro Clock",
     demoUrl: "https://tforward.github.io/fccPomodoro/",
     codeUrl: "https://github.com/tforward/fccPomodoro",
-    imageName: "calculator",
+    imageName: "pomodoro",
     imgClass: "card-img-portrait",
-    tools: "HTML, CSS (Flexbox, Grid, Variables), JS (esLint), Webpack",
+    tools: "HTML, CSS (Flexbox, Grid, Variables), JS (ESLint, Webpack)",
     cardClass: "card"
   });
   cardPomodoro.createElems();
@@ -96,9 +95,9 @@ myBase.initApplication = function init() {
     description: "A just for fun experiment with CSS Grid",
     demoUrl: "https://tforward.github.io/gridImage/",
     codeUrl: "https://github.com/tforward/gridImage",
-    imageName: "calculator",
+    imageName: "grid5x5",
     imgClass: "card-img-portrait",
-    tools: "HTML, CSS (Flexbox, Grid), JS (esLint), Webpack",
+    tools: "HTML, CSS (Flexbox, Grid), JS (ESLint, Webpack)",
     cardClass: "card"
   });
   cardGridImage.createElems();
@@ -109,9 +108,9 @@ myBase.initApplication = function init() {
     description: "The classic 1980's game Simon",
     demoUrl: "https://tforward.github.io/fccSimon/",
     codeUrl: "https://github.com/tforward/fccSimon",
-    imageName: "calculator",
+    imageName: "simon",
     imgClass: "card-img-portrait",
-    tools: "HTML, CSS (Flexbox), JS (esLint), Webpack",
+    tools: "HTML, CSS (Flexbox), JS (ESLint, Webpack)",
     cardClass: "card"
   });
   cardSimon.createElems();
@@ -122,9 +121,9 @@ myBase.initApplication = function init() {
     description: "The always classic Tic Tac Toe!",
     demoUrl: "https://tforward.github.io/fccTicTacToe/",
     codeUrl: "https://github.com/tforward/fccTicTacToe",
-    imageName: "calculator",
+    imageName: "tictac",
     imgClass: "card-img-portrait",
-    tools: "HTML, CSS (Flexbox), JS (esLint), Gulp",
+    tools: "HTML, CSS (Flexbox), JS (ESLint, Gulp)",
     cardClass: "card"
   });
   cardTicTac.createElems();
@@ -135,8 +134,8 @@ myBase.initApplication = function init() {
     description: "A responsive map template",
     demoUrl: "https://tforward.github.io/LeafShoot/",
     codeUrl: "https://github.com/tforward/LeafShoot",
-    imageName: "calculator",
-    imgClass: "card-img-portrait",
+    imageName: "leafshoot",
+    imgClass: "card-img-landscape",
     tools: "HTML, CSS (Bootstrap), JS (Leaflet)",
     cardClass: "card"
   });
