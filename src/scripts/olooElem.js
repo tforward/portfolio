@@ -40,3 +40,10 @@ export function FragmentDelegator() {
   };
   return FragmentDele;
 }
+
+export const appendElemsToParent = (elems, parent) => {
+  // Appends each element given to the parent element
+  elems.forEach(elem => {
+    elem.appendContent(parent);
+  });
+};
