@@ -17,29 +17,37 @@ myBase.initApplication = function init() {
   const createCard = function card(data) {
     // Just use the same syntax for node elements
     const state = {
-      card: { elem: "div", id: data.elemId, className: data.cardClass },
-      cardText: { elem: "div", className: "card-text" },
-      title: { elem: "h3", textContent: data.title, className: "card-title" },
-      imgFrame: { elem: "div", className: "card-img-frame center" },
-      imgBox: { elem: "div", className: "card-img-box" },
-      img: { elem: "img", className: data.imgClass, src: `../images/${data.imageName}.jpg` },
-      imgOverlay: { elem: "div", className: "card-img-overlay" },
+      // img: { elem: "img", className: data.imgClass, src: `../images/${data.imageName}.jpg` },
+      // desc: { elem: "p", className: "card-desc", textContent: data.description },
+      // Card
+      // item > demoLink > thumb > thumbOverlay: > { btnHolder: { btnDemoUrl: btnDemo , btnCodeUrl: btnCode } }
+      item: { elem: "div", className: data.elemId },
+      card: { elem: "a", className: "card", href: data.demoUrl },
+      thumb: { elem: "div", className: "thumb", style: `background-image: url(../images/${data.imageName}.jpg)` },
+      thumbOverlay: { elem: "div", className: "thumb-overlay center" },
+      btnHolder: { elem: "div", className: "card-btn-holder center" },
+      // The problem is here, the a tag can't be styled the way I want make div around it
       btnDemoUrl: { elem: "a", className: "noTextDecoration", href: data.demoUrl, target: "_blank" },
       btnCodeUrl: { elem: "a", className: "noTextDecoration", href: data.codeUrl, target: "_blank" },
-      btnDemo: { elem: "button", className: "card-img-overlay-btn center demo", textContent: "Demo" },
-      btnCode: { elem: "button", className: "card-img-overlay-btn center code", textContent: "Code" },
-      desc: { elem: "p", className: "card-desc", textContent: data.description },
-      toolbox: { elem: "p", className: "toolbox", textContent: data.tools }
+      btnDemo: { elem: "button", className: "card-btn demo center noSelect", textContent: "Demo" },
+      btnCode: { elem: "button", className: "card-btn code center noSelect", textContent: "Code" },
+      // Card
+      article: { elem: "article" },
+      title: { elem: "h1", className: "title", textContent: data.title },
+      tools: { elem: "span", className: "toolbox", textContent: data.tools }
     };
+
     const addContent = () => ({
       appendContent: function appendContent(parent) {
-        this.cardText.elem.appendChild(this.addElem([this.title, this.desc, this.toolbox]));
         this.btnDemoUrl.elem.appendChild(this.btnDemo.elem);
         this.btnCodeUrl.elem.appendChild(this.btnCode.elem);
-        this.imgOverlay.elem.appendChild(this.addElem([this.btnDemoUrl, this.btnCodeUrl]));
-        this.imgFrame.elem.appendChild(this.addElem([this.imgBox, this.img, this.imgOverlay]));
-        this.card.elem.appendChild(this.addElem([this.imgFrame, this.cardText]));
-        parent.appendChild(this.card.elem);
+        this.btnHolder.elem.appendChild(this.addElem([this.btnDemoUrl, this.btnCodeUrl]));
+        this.thumbOverlay.elem.appendChild(this.addElem([this.btnHolder]));
+        this.thumb.elem.appendChild(this.thumbOverlay.elem);
+        this.article.elem.appendChild(this.addElem([this.title, this.tools]));
+        this.card.elem.appendChild(this.addElem([this.thumb, this.article]));
+        this.item.elem.appendChild(this.card.elem);
+        parent.appendChild(this.item.elem);
       }
     });
     // If you add an object to create it will show up on the __proto__
