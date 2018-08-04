@@ -5,6 +5,11 @@
 export function ElemDelegator(state) {
   const Content = Object.create(null);
 
+  Content.addHtml = function addHtml(parent) {
+    parent.insertAdjacentHTML("beforeend", state);
+    return parent.lastChild;
+  };
+
   Content.createElems = function createElems() {
     Object.keys(state).forEach(key => {
       state[key].elem = document.createElement(state[key].elem);

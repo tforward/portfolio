@@ -16,43 +16,26 @@ myBase.initApplication = function init() {
 
   const createCard = function card(data) {
     // Just use the same syntax for node elements
-    const state = {
-      // img: { elem: "img", className: data.imgClass, src: `../images/${data.imageName}.jpg` },
-      // desc: { elem: "p", className: "card-desc", textContent: data.description },
-      // Card
-      // item > demoLink > thumb > thumbOverlay: > { btnHolder: { btnDemoUrl: btnDemo , btnCodeUrl: btnCode } }
-      item: { elem: "div", className: data.elemId },
-      card: { elem: "a", className: "card", href: data.demoUrl },
-      thumb: { elem: "div", className: "thumb", style: `background-image: url(../images/${data.imageName}.jpg)` },
-      thumbOverlay: { elem: "div", className: "thumb-overlay center" },
-      btnHolder: { elem: "div", className: "card-btn-holder center" },
-      // The problem is here, the a tag can't be styled the way I want make div around it
-      btnDemoUrl: { elem: "a", className: "noTextDecoration", href: data.demoUrl, target: "_blank" },
-      btnCodeUrl: { elem: "a", className: "noTextDecoration", href: data.codeUrl, target: "_blank" },
-      btnDemo: { elem: "button", className: "card-btn demo center noSelect", textContent: "Demo" },
-      btnCode: { elem: "button", className: "card-btn code center noSelect", textContent: "Code" },
-      // Card
-      article: { elem: "article" },
-      title: { elem: "h1", className: "title", textContent: data.title },
-      tools: { elem: "span", className: "toolbox", textContent: data.tools }
-    };
+    const state = `<div id="${data.elemId}" class="card-calc">
+    <a class="card" href="${data.demoUrl}">
+        <div class="thumb" style="background-image: url(../images/${data.imageName}.jpg)">
+          <div class="thumb-overlay center">
+              <div class="card-btn-holder center">
+    <a class="noTextDecoration" href="${
+      data.demoUrl
+    }" target="_blank"><button class="card-btn demo center noSelect">Demo</button></a><a class="noTextDecoration" href="${
+      data.codeUrl
+    }" target="_blank"><button class="card-btn code center noSelect">Code</button></a></div></div></div>
+    <article>
+        <h1 class="title">${data.title}</h1>
+        <span class="toolbox">${data.tools}</span>
+    </article>
+    </a>
+  </div>`;
 
-    const addContent = () => ({
-      appendContent: function appendContent(parent) {
-        this.btnDemoUrl.elem.appendChild(this.btnDemo.elem);
-        this.btnCodeUrl.elem.appendChild(this.btnCode.elem);
-        this.btnHolder.elem.appendChild(this.addElem([this.btnDemoUrl, this.btnCodeUrl]));
-        this.thumbOverlay.elem.appendChild(this.addElem([this.btnHolder]));
-        this.thumb.elem.appendChild(this.thumbOverlay.elem);
-        this.article.elem.appendChild(this.addElem([this.title, this.tools]));
-        this.card.elem.appendChild(this.addElem([this.thumb, this.article]));
-        this.item.elem.appendChild(this.card.elem);
-        parent.appendChild(this.item.elem);
-      }
-    });
     // If you add an object to create it will show up on the __proto__
     // for that object, default null.
-    return Object.assign(Object.create(state), addContent(), ElemDelegator(state), FragmentDelegator(state));
+    return Object.assign(Object.create(state), ElemDelegator(state), FragmentDelegator(state));
   };
 
   // TODO Have these on a seperate page and import them
