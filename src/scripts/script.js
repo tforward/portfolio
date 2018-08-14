@@ -133,6 +133,10 @@ myBase.initApplication = function init() {
   });
   cardLeafshoot.createElems();
 
+<<<<<<< HEAD
+=======
+  const projects = document.getElementById("projects");
+>>>>>>> parent of ccb114b... changes images
   // TODO Create a function to semi randomly order the projects or similar
   cardPomodoro.appendContent(projects);
   cardCalc.appendContent(projects);

@@ -192,7 +192,6 @@ h1::after {
   grid-template-rows: auto;
   grid-gap: var(--padding);
   grid-template-columns: repeat(auto-fit, minmax(calc(30.5vmin + 4vh), 4fr));
-  grid-auto-flow: row dense;
 }
 
 /* PROJECTS > CARDS */
