@@ -6,7 +6,6 @@ export function ElemDelegator(state) {
   const Content = Object.create(null);
 
   Content.addHtml = function addHtml(parent) {
-    console.log(parent);
     parent.insertAdjacentHTML("beforeend", state);
     return parent.lastChild;
   };
