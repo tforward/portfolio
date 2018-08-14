@@ -35,7 +35,7 @@ myBase.initApplication = function init() {
 
     // If you add an object to create it will show up on the __proto__
     // for that object, default null.
-    return Object.assign(Object.create(state), ElemDelegator(state), FragmentDelegator(state));
+    return Object.assign(Object.create(null), ElemDelegator(state), FragmentDelegator(state));
   };
 
   // TODO Have these on a seperate page and import them
@@ -52,7 +52,7 @@ myBase.initApplication = function init() {
     imgClass: "card-img-portrait",
     cardClass: "card"
   });
-  cardCalc.createElems();
+  cardCalc.addHtml(parent);
 
   const cardTwitch = createCard({
     elemId: "card-twitch",
