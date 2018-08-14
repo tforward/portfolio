@@ -41,6 +41,7 @@ myBase.initApplication = function init() {
   // TODO Have these on a seperate page and import them
   // TODO item-1 classname thing
   //     // Need image cover
+  const projects = document.getElementById("projects");
   const cardCalc = createCard({
     elemId: "card-calc",
     title: "Calculator",
@@ -52,7 +53,7 @@ myBase.initApplication = function init() {
     imgClass: "card-img-portrait",
     cardClass: "card"
   });
-  cardCalc.addHtml(parent);
+  cardCalc.addHtml(projects);
 
   const cardTwitch = createCard({
     elemId: "card-twitch",
@@ -132,7 +133,6 @@ myBase.initApplication = function init() {
   });
   cardLeafshoot.createElems();
 
-  const projects = document.getElementById("projects");
   // TODO Create a function to semi randomly order the projects or similar
   cardPomodoro.appendContent(projects);
   cardCalc.appendContent(projects);
