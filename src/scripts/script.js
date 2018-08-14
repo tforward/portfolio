@@ -5,7 +5,7 @@ import normalise_ from "../../node_modules/normalize.css";
 import css_ from "../css/styles.css";
 import { EventDelegator, getTargetId } from "./olooEvent";
 import { SubscribersDelegator } from "./olooObserver";
-import { ElemDelegator, FragmentDelegator, appendElemsToParent } from "./olooElem";
+import { ElemDelegator, FragmentDelegator } from "./olooElem";
 import leaflet_ from "./leafletembed";
 
 const myBase = Object.create(null);
@@ -128,57 +128,21 @@ myBase.initApplication = function init() {
     imageName: "leafshoot",
     imgClass: "card-img-landscape",
     tools: "HTML, CSS (Bootstrap), JS (Leaflet)",
-    cardClass: "card cardSpan2"
+    cardClass: "card"
   });
   cardLeafshoot.createElems();
 
-  const cardCBCLogo = createCard({
-    elemId: "card-cbc",
-    title: "CBC Logo",
-    description: "A tribute to the CBC logo",
-    demoUrl: "https://codepen.io/tforward/full/JZavoY/",
-    codeUrl: "https://codepen.io/tforward/pen/JZavoY",
-    imageName: "cbc",
-    imgClass: "card-img-portrait",
-    tools: "HTML, CSS (Grid, Pseudo elements, variables)",
-    cardClass: "card"
-  });
-  cardCBCLogo.createElems();
-
-  const cardCalgaryMap = createCard({
-    elemId: "card-calgaryMap",
-    title: "Calgary Pop Density Map",
-    description: "An interactive population density map of Calgary",
-    demoUrl: "https://codepen.io/tforward/full/JZavoY/",
-    codeUrl: "https://codepen.io/tforward/pen/JZavoY",
-    imageName: "calgaryMap",
-    imgClass: "card-img-portrait",
-    tools: "HTML, CSS, JS (Bootstrap, Leaflet), Other (QGIS)",
-    cardClass: "card"
-  });
-  cardCalgaryMap.createElems();
-
   const projects = document.getElementById("projects");
-
   // TODO Create a function to semi randomly order the projects or similar
-
-  appendElemsToParent(
-    [
-      cardPomodoro,
-      cardCalc,
-      cardTwitch,
-      cardGridImage,
-      cardSimon,
-      cardTicTac,
-      cardLeafshoot,
-      cardCBCLogo,
-      cardCalgaryMap
-    ],
-    projects
-  );
+  cardPomodoro.appendContent(projects);
+  cardCalc.appendContent(projects);
+  cardTwitch.appendContent(projects);
+  cardGridImage.appendContent(projects);
+  cardSimon.appendContent(projects);
+  cardTicTac.appendContent(projects);
+  cardLeafshoot.appendContent(projects);
 
   // Band for differnet content (LATER)
-  // Footer Contacts etc.
 
   // const eventSandbox = EventDelegator();
   // eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });
