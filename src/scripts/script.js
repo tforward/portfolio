@@ -136,6 +136,9 @@ myBase.initApplication = function init() {
 <<<<<<< HEAD
 =======
   const projects = document.getElementById("projects");
+<<<<<<< HEAD
+>>>>>>> parent of ccb114b... changes images
+=======
 >>>>>>> parent of ccb114b... changes images
   // TODO Create a function to semi randomly order the projects or similar
   cardPomodoro.appendContent(projects);
