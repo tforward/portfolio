@@ -16,10 +16,10 @@ myBase.initApplication = function init() {
 
   const createCard = function card(data) {
     // Just use the same syntax for node elements
-    const state = `<div id="${data.elemId}" class="card-calc">
-    <a class="card" href="${data.demoUrl}">
-        <div class="thumb" style="background-image: url(../images/${data.imageName}.jpg)">
-          <div class="thumb-overlay center">
+    const state = `<div id="${data.elemId}" class="card">
+    <a class="card-content" href="${data.demoUrl}">
+        <div class="card-thumb" style="background-image: url(../images/${data.imageName}.jpg)">
+          <div class="card-thumb-overlay center">
               <div class="card-btn-holder center">
     <a class="noTextDecoration" href="${
       data.demoUrl
