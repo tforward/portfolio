@@ -16,7 +16,6 @@ myBase.initApplication = function init() {
 
   const createCard = function card(data) {
     // Just use the same syntax for node elements
-<<<<<<< HEAD
     const state = `<div id="${data.elemId}" class="card-calc">
     <a class="card" href="${data.demoUrl}">
         <div class="thumb" style="background-image: url(../images/${data.imageName}.jpg)">
@@ -28,40 +27,12 @@ myBase.initApplication = function init() {
       data.codeUrl
     }" target="_blank"><button class="card-btn code center noSelect">Code</button></a></div></div></div>
     <article>
-        <h1 class="title">${data.title}</h1>
+        <h3 class="title">${data.title}</h3>
         <span class="toolbox">${data.tools}</span>
     </article>
     </a>
   </div>`;
 
-=======
-    const state = {
-      card: { elem: "div", id: data.elemId, className: data.cardClass },
-      cardText: { elem: "div", className: "card-text" },
-      title: { elem: "h3", textContent: data.title, className: "card-title" },
-      imgFrame: { elem: "div", className: "card-img-frame center" },
-      imgBox: { elem: "div", className: "card-img-box" },
-      img: { elem: "img", className: data.imgClass, src: `../images/${data.imageName}.jpg` },
-      imgOverlay: { elem: "div", className: "card-img-overlay" },
-      btnDemoUrl: { elem: "a", className: "noTextDecoration", href: data.demoUrl, target: "_blank" },
-      btnCodeUrl: { elem: "a", className: "noTextDecoration", href: data.codeUrl, target: "_blank" },
-      btnDemo: { elem: "button", className: "card-img-overlay-btn center demo", textContent: "Demo" },
-      btnCode: { elem: "button", className: "card-img-overlay-btn center code", textContent: "Code" },
-      desc: { elem: "p", className: "card-desc", textContent: data.description },
-      toolbox: { elem: "p", className: "toolbox", textContent: data.tools }
-    };
-    const addContent = () => ({
-      appendContent: function appendContent(parent) {
-        this.cardText.elem.appendChild(this.addElem([this.title, this.desc, this.toolbox]));
-        this.btnDemoUrl.elem.appendChild(this.btnDemo.elem);
-        this.btnCodeUrl.elem.appendChild(this.btnCode.elem);
-        this.imgOverlay.elem.appendChild(this.addElem([this.btnDemoUrl, this.btnCodeUrl]));
-        this.imgFrame.elem.appendChild(this.addElem([this.imgBox, this.img, this.imgOverlay]));
-        this.card.elem.appendChild(this.addElem([this.imgFrame, this.cardText]));
-        parent.appendChild(this.card.elem);
-      }
-    });
->>>>>>> parent of 111dafe... redo
     // If you add an object to create it will show up on the __proto__
     // for that object, default null.
     return Object.assign(Object.create(null), ElemDelegator(state), FragmentDelegator(state));
@@ -95,7 +66,7 @@ myBase.initApplication = function init() {
     imgClass: "card-img-landscape",
     cardClass: "card cardSpan2"
   });
-  cardTwitch.createElems();
+  cardTwitch.addHtml(projects);
 
   const cardPomodoro = createCard({
     elemId: "card-pomodoro",
@@ -108,7 +79,7 @@ myBase.initApplication = function init() {
     tools: "HTML, CSS (Flexbox, Grid, Variables), JS (ESLint, Webpack)",
     cardClass: "card"
   });
-  cardPomodoro.createElems();
+  cardPomodoro.addHtml(projects);
 
   const cardGridImage = createCard({
     elemId: "card-gridImage",
@@ -121,7 +92,7 @@ myBase.initApplication = function init() {
     tools: "HTML, CSS (Flexbox, Grid), JS (ESLint, Webpack)",
     cardClass: "card"
   });
-  cardGridImage.createElems();
+  cardGridImage.addHtml(projects);
 
   const cardSimon = createCard({
     elemId: "card-simon",
@@ -134,7 +105,7 @@ myBase.initApplication = function init() {
     tools: "HTML, CSS (Flexbox), JS (ESLint, Webpack)",
     cardClass: "card"
   });
-  cardSimon.createElems();
+  cardSimon.addHtml(projects);
 
   const cardTicTac = createCard({
     elemId: "card-tictac",
@@ -147,7 +118,7 @@ myBase.initApplication = function init() {
     tools: "HTML, CSS (Flexbox), JS (ESLint, Gulp)",
     cardClass: "card"
   });
-  cardTicTac.createElems();
+  cardTicTac.addHtml(projects);
 
   const cardLeafshoot = createCard({
     elemId: "card-leaf",
@@ -160,23 +131,16 @@ myBase.initApplication = function init() {
     tools: "HTML, CSS (Bootstrap), JS (Leaflet)",
     cardClass: "card"
   });
-  cardLeafshoot.createElems();
+  cardLeafshoot.addHtml(projects);
 
-<<<<<<< HEAD
-=======
-  const projects = document.getElementById("projects");
-<<<<<<< HEAD
->>>>>>> parent of ccb114b... changes images
-=======
->>>>>>> parent of ccb114b... changes images
   // TODO Create a function to semi randomly order the projects or similar
-  cardPomodoro.appendContent(projects);
-  cardCalc.appendContent(projects);
-  cardTwitch.appendContent(projects);
-  cardGridImage.appendContent(projects);
-  cardSimon.appendContent(projects);
-  cardTicTac.appendContent(projects);
-  cardLeafshoot.appendContent(projects);
+  // cardPomodoro.appendContent(projects);
+  // cardCalc.appendContent(projects);
+  // cardTwitch.appendContent(projects);
+  // cardGridImage.appendContent(projects);
+  // cardSimon.appendContent(projects);
+  // cardTicTac.appendContent(projects);
+  // cardLeafshoot.appendContent(projects);
 
   // Band for differnet content (LATER)
 
