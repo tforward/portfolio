@@ -224,7 +224,6 @@ h1::after {
   transform: translate(-50%, -50%);
   position: block;
   opacity: 0.5;
-  background-color: red;
   transition: opacity ease-in 450ms;
 }
 
