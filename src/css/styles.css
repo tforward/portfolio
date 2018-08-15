@@ -212,7 +212,7 @@ h1::after {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 35vmin;
-  position: block;
+  position: relative;
 }
 
 .card-thumb-overlay {
@@ -226,6 +226,11 @@ h1::after {
   opacity: 0.5;
   background-color: red;
   transition: opacity ease-in 450ms;
+}
+
+.card-btn-holder {
+  position: absolute;
+  bottom: 8px;
 }
 
 
