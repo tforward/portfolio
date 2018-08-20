@@ -24,34 +24,32 @@ myBase.initApplication = function init() {
   const projectsContainer = document.createElement("div");
   projectsContainer.className = "projects-container";
 
-  card.cardCalc.addHtml(projectsContainer);
-  card.cardTwitch.addHtml(projectsContainer);
-  card.cardPomodoro.addHtml(projectsContainer);
-  card.cardGridImage.addHtml(projectsContainer);
-  card.cardSimon.addHtml(projectsContainer);
-  card.cardTicTac.addHtml(projectsContainer);
-  card.cardLeafshoot.addHtml(projectsContainer);
+  // Add all cards to the project container
+  Object.keys(card).forEach(key => {
+    card[key].addHtml(projectsContainer);
+  });
 
+  // Add project container to the DOM
   projects.appendChild(projectsContainer);
 
   // TODO Create a function to semi randomly order the projects or similar
 
   // Band for differnet content (LATER)
 
-  // const eventSandbox = EventDelegator();
-  // eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });
-  // eventSandbox.addEvent(eventController);
+  const eventSandbox = EventDelegator();
+  eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });
+  eventSandbox.addEvent(eventController);
 
   function eventController(args, e) {
     const id = getTargetId(e, args.tags);
     if (id !== undefined) {
-      myBase.main(id);
+      console.log(id);
     }
   }
 };
 
 myBase.main = function main(id) {
-  const self = myApp.obj[id];
+  // const self = myApp.obj[id];
 };
 
 // ======================================================================

@@ -16,10 +16,8 @@
 </head>
 
 <body>
-
-    <header class="hero">
-        <section class="map-pos">
-
+    <header class="hero center">
+        <section class="map-pos center">
             <h2 class="title-name noSelect">Tristan Forward</h2>
             <h1 class="noSelect">GIS Developer</h1>
             <div class="title-info">
@@ -44,23 +42,56 @@
                 <div id="maphead" class="maphead">
                 </div>
             </div>
+        </section>
+    </header>
+    <div id="eventSandbox">
+        <div class="nav-down-frame center">
+            <div class="whiteArrow"></div>
+            <span>
+                <a class="center">
+                    <i class="fas fa-caret-down nav-down"></i>
+                </a>
+            </span>
 
+        </div>
+        <section id="summary" class="summary center">
+            <div class="sum-middle">
+                <h5>Portfolio</h5>
+            </div>
+        </section>
+        <section>
+            <!-- <div class="projectTags center">
+                <button id="btn-tag-web" class="btn-tag">Web</button>
+                <button id="btn-tag-all" class="btn-tag">All</button>
+                <button id="btn-tag-python" class="btn-tag">Python</button>
+            </div> -->
+            <div class="projects">
+                <div id="projects">
+                </div>
+            </div>
         </section>
 
-    </header>
-    <section id="summary" class="summary">
-        <div class="sum-left"></div>
-        <div class="sum-middle boxShadow">
-            <h2>Projects</h2>
-        </div>
-        <div class="sum-right"></div>
-    </section>
-    <section class="projects">
-        <div id="projects">
-        </div>
-    </section>
-    <footer class="footer"></footer>
+        <footer class="footer center">
+            <section class="links">
+                <span>
+                    <a class="contact-link" href="mailto:tforward@gmail.com" target="_blank">
+                        <i class="btn fas fa-envelope-square" alt="Email Me"></i>
+                    </a>
+                </span>
+                <span>
+                    <a class="contact-link" href="https://linkedin.com/in/tristanforward" target="_blank">
+                        <i class="btn fab fa-linkedin" alt="LinkedIn"></i>
+                </span>
+                <span>
+                    <a class="contact-link" href="https://github.com/tforward" target="_blank">
+                        <i class="btn fab fa-github-square" alt="GitHub"></i>
+                    </a>
+                </span>
+            </section>
+        </footer>
+    </div>
 </body>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
 <script type="text/javascript" src="app.bundle.js"></script>
 

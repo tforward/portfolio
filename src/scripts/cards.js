@@ -14,7 +14,7 @@ const createCard = function card(data) {
   }" target="_blank"><button class="card-btn code center noSelect">Code</button></a></div></div></div>
     </a>
     <article class="card-article">
-        <h3 class="card-title">${data.title}</h3>
+        <h4 class="card-title">${data.title}</h4>
         <span class="card-toolbox">${data.tools}</span>
     </article>
   </div>`;
@@ -112,6 +112,42 @@ export function defineCards() {
     imageName: "leafshoot",
     imgClass: "card-img-landscape",
     tools: "HTML, CSS (Bootstrap), JS (Leaflet)",
+    cardClass: "card"
+  });
+
+  card.cardCBC = createCard({
+    elemId: "card-cbc",
+    title: "CSS Grid CBC Tribue Logo",
+    description: "A CSS Grid tribute to the CBC logo",
+    demoUrl: "https://codepen.io/tforward/full/JZavoY/",
+    codeUrl: "https://codepen.io/tforward/pen/JZavoY",
+    imageName: "cbc",
+    imgClass: "card-img-portrait",
+    tools: "HTML, CSS (Grid)",
+    cardClass: "card"
+  });
+
+  card.cardQuote = createCard({
+    elemId: "card-quote",
+    title: "Random Quote Machine",
+    description: "A random quote machine",
+    demoUrl: "https://codepen.io/tforward/full/BZWqQp/",
+    codeUrl: "https://codepen.io/tforward/pen/BZWqQp",
+    imageName: "quote",
+    imgClass: "card-img-portrait",
+    tools: "HTML, CSS, JS",
+    cardClass: "card"
+  });
+
+  card.cardCutPolygon = createCard({
+    elemId: "card-cutPolygon",
+    title: "ArcPy tool: Cut Polygon by line(s)",
+    description: "Cut a polygon by line(s)",
+    demoUrl: "https://codepen.io/tforward/full/BZWqQp/",
+    codeUrl: "https://github.com/tforward/CutPolygonByLines",
+    imageName: "cutPolygon",
+    imgClass: "card-img-portrait",
+    tools: "Python, ArcPy",
     cardClass: "card"
   });
 
