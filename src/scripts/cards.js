@@ -143,7 +143,7 @@ export function defineCards() {
     elemId: "card-cutPolygon",
     title: "ArcPy tool: Cut Polygon by line(s)",
     description: "Cut a polygon by line(s)",
-    demoUrl: "https://codepen.io/tforward/full/BZWqQp/",
+    demoUrl: "https://i.imgur.com/ZF6m98j.gifv",
     codeUrl: "https://github.com/tforward/CutPolygonByLines",
     imageName: "cutPolygon",
     imgClass: "card-img-portrait",
