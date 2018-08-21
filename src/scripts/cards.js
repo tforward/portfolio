@@ -24,10 +24,6 @@ const createCard = function card(data) {
   return Object.assign(Object.create(null), ElemDelegator(state), FragmentDelegator(state));
 };
 
-// TODO Have these on a seperate page and import them
-// TODO item-1 classname thing
-//     // Need image cover
-
 export function defineCards() {
   const card = Object.create(null);
 

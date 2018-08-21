@@ -5,7 +5,6 @@ import normalise_ from "../../node_modules/normalize.css";
 import css_ from "../css/styles.css";
 import { EventDelegator, getTargetId } from "./olooEvent";
 import { SubscribersDelegator } from "./olooObserver";
-import { ElemDelegator, FragmentDelegator } from "./olooElem";
 import { defineCards } from "./cards";
 import leaflet_ from "./leafletembed";
 import SmoothScroll from "./smooth-scroll.polyfills.min";
@@ -17,10 +16,6 @@ myBase.initApplication = function init() {
   myApp.init();
 
   const card = defineCards();
-
-  // TODO Have these on a seperate page and import them
-  // TODO item-1 classname thing
-  //     // Need image cover
   const projects = document.getElementById("projects");
   const projectsContainer = document.createElement("div");
   projectsContainer.className = "projects-container";
@@ -34,8 +29,6 @@ myBase.initApplication = function init() {
   projects.appendChild(projectsContainer);
 
   // TODO Create a function to semi randomly order the projects or similar
-
-  // Band for differnet content (LATER)
 
   const eventSandbox = EventDelegator();
   eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });
@@ -56,9 +49,9 @@ const scroll = new SmoothScroll("a[href*='#summary']", {
   easing: "easeInOutCubic" // Easing pattern to use
 });
 
-myBase.main = function main(id) {
-  // const self = myApp.obj[id];
-};
+// myBase.main = function main(id) {
+//   // const self = myApp.obj[id];
+// };
 
 // ======================================================================
 // Handler when the DOM is fully loaded
