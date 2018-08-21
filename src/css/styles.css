@@ -189,6 +189,10 @@ h1::after {
   top: 90vh;
 }
 
+.nav-down-link, nav-down-link:visited, nav-down-link:hover, nav-down-link:active {
+  color: black;
+}
+
 /* PROJECTS */
 
 .projects {

@@ -8,6 +8,7 @@ import { SubscribersDelegator } from "./olooObserver";
 import { ElemDelegator, FragmentDelegator } from "./olooElem";
 import { defineCards } from "./cards";
 import leaflet_ from "./leafletembed";
+import SmoothScroll from "./smooth-scroll.polyfills.min";
 
 const myBase = Object.create(null);
 const myApp = SubscribersDelegator();
@@ -47,6 +48,13 @@ myBase.initApplication = function init() {
     }
   }
 };
+
+const scroll = new SmoothScroll("a[href*='#summary']", {
+  // Speed & Easing
+  speed: 800, // Integer. How fast to complete the scroll in milliseconds
+  clip: true, // If true, adjust scroll distance to prevent abrupt stops near the bottom of the page
+  easing: "easeInOutCubic" // Easing pattern to use
+});
 
 myBase.main = function main(id) {
   // const self = myApp.obj[id];
