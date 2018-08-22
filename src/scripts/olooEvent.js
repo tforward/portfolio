@@ -60,8 +60,6 @@ export function EventDelegator() {
 // Event Utilities
 // ======================================================================
 
-// https://stackoverflow.com/questions/14019780/single-event-handler-for-all-events-javascript-jquery
-
 export function getTargetId(e, tags) {
   let findId;
   // lookup the path chain for the nearest id that matches the tag types

@@ -54,7 +54,7 @@ const scroll = new SmoothScroll("a[href*='#summary']", {
 // };
 
 // ======================================================================
-// Handler when the DOM is fully loaded
+// Handler for when the DOM is fully loaded
 document.onreadystatechange = function onreadystatechange() {
   if (document.readyState === "complete") {
     if (process.env.NODE_ENV !== "production") {

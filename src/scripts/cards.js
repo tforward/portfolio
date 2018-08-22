@@ -147,5 +147,17 @@ export function defineCards() {
     cardClass: "card"
   });
 
+  card.cardCalgaryMap = createCard({
+    elemId: "card-calgaryMap",
+    title: "Calgary Population Density 2014",
+    description: "Calgary Population Density 2014",
+    demoUrl: "http://tforward.github.io/calgary_pop_2014/",
+    codeUrl: "https://github.com/tforward/calgary_pop_2014",
+    imageName: "Calgary_2014_Pop",
+    imgClass: "card-img-portrait",
+    tools: "Bootstrap, Leaflet, QGIS",
+    cardClass: "card"
+  });
+
   return card;
 }
