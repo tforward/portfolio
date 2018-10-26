@@ -15,9 +15,20 @@
   --padding: 1.36em;
 }
 
+/* Resets */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+img {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: auto;
+}
+
+/*  */
 
 
 body {
@@ -197,6 +208,9 @@ h1::after {
 
 .projects {
   padding: var(--padding);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 37em;
 }
 
 .projectTags {
@@ -223,30 +237,15 @@ h1::after {
   cursor: pointer;
 }
 
-
-.projects-container {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 165vmin;
-  display: grid;
-  
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-gap: var(--padding);
-  grid-template-columns: repeat(auto-fit, minmax(calc(35.5vmin + 4vh), 1fr));
-  grid-auto-flow: row dense;
-}
-
 /* PROJECTS > CARDS */
 
 .card {
   position: relative;
-  display: flex;
-  flex-direction: column;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   text-decoration: none;
   color: #444;
   top: 0;
+  margin: 1em;
   transition: all .1s ease-in;
 }
 
@@ -344,6 +343,51 @@ h1::after {
   background-color: #ECF7FC;
   flex-shrink: 0;
 }
+
+
+
+/* === GRID === */
+
+@supports (display: grid) {
+  @media screen and (min-width: 600px) {
+
+  /* Reser Margins */
+  .card {
+    margin: 0px;
+  }
+
+  .projects {
+    padding: var(--padding);
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+  }
+
+  .projects-container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 80em;
+    display: grid;
+    
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-flow: row dense;
+  }
+
+  #card-twitch,
+  #card-leaf,
+  #card-quote{
+    grid-column: span 2;
+  }
+}
+  
+}
+
+
+
+/* === GRID === */
 
 
 /* UTILITY */
