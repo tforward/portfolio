@@ -26,9 +26,9 @@ myBase.initApplication = function init() {
   });
 
   // Add project container to the DOM
-  projects.appendChild(projectsContainer);
+  // projects.appendChild(projectsContainer);
 
-  // TODO Create a function to semi randomly order the projects or similar
+  // TODO LATER Create a function to semi randomly order the projects or similar
 
   const eventSandbox = EventDelegator();
   eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });
