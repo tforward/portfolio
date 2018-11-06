@@ -2,22 +2,18 @@ import { ElemDelegator, FragmentDelegator } from "./olooElem";
 
 const createCard = function card(data) {
   // Just use the same syntax for node elements
-  const state = `<div id="${data.elemId}" class="${data.cardClass}">
-        <div class="card-thumb ${data.cardThumbSize}" style="background-image: url(../images/${data.imageName}.jpg)">
-        <a class="card-content" href="${data.demoUrl}" target="_blank">
-          <div class="card-thumb-overlay center">
-              <div class="card-btn-holder center">
-    <a class="noTextDecoration" href="${
-      data.demoUrl
-    }" target="_blank"><button class="card-btn demo center noSelect">Demo</button></a><a class="noTextDecoration" href="${
-    data.codeUrl
-  }" target="_blank"><button class="card-btn code center noSelect">Code</button></a></div></div></div>
-    </a>
-    <article class="card-article">
-        <h4 class="card-title">${data.title}</h4>
+
+  const state = `
+    <li id="${data.elemId}" class="card ${data.cardClass}">
+      <h3 class="card-title">${data.title}</h3>
         <span class="card-toolbox">${data.tools}</span>
-    </article>
-  </div>`;
+        <a class="card-thumb" style="background-image: url(../images/${data.imageName}.jpg)" href="${
+    data.demoUrl
+  }" target="_blank"></a>
+        <div class="btn-bottom center-text">
+            <a class="card-btn card-btn-text" href="${data.codeUrl}" target="_blank">CODE</a>
+        </div>
+    </li>`;
 
   // If you add an object to create it will show up on the __proto__
   // for that object, default null.
@@ -28,7 +24,7 @@ export function defineCards() {
   const card = Object.create(null);
 
   card.cardCalc = createCard({
-    elemId: "card-calc",
+    elemId: "card-id-calc",
     title: "Calculator",
     description: "A Responsive Formula Expression Logic Calculator",
     demoUrl: "https://tforward.github.io/JSCalculator/",
@@ -36,23 +32,11 @@ export function defineCards() {
     tools: "HTML, CSS (Grid), JS (ESLint)",
     imageName: "calculator",
     imgClass: "card-img-portrait",
-    cardClass: "card portrait"
-  });
-
-  card.cardTwitch = createCard({
-    elemId: "card-twitch",
-    title: "Twitch Viewer",
-    description: "A Twitch API Responsive Viewer",
-    demoUrl: "https://tforward.github.io/fccTwitchTV/",
-    codeUrl: "https://github.com/tforward/fccTwitchTV",
-    tools: "HTML, CSS (Flexbox), JS (ESLint, Webpack, Twitch API)",
-    imageName: "twitch",
-    imgClass: "card-img-landscape",
-    cardClass: "card landscape"
+    cardClass: "card-calc card portrait"
   });
 
   card.cardPomodoro = createCard({
-    elemId: "card-pomodoro",
+    elemId: "card-id-pomodoro",
     title: "Pomodoro Clock",
     description: "A Responsive Pomodoro Clock",
     demoUrl: "https://tforward.github.io/fccPomodoro/",
@@ -60,11 +44,23 @@ export function defineCards() {
     imageName: "pomodoro",
     imgClass: "card-img-portrait",
     tools: "HTML, CSS (Flexbox, Grid, Variables), JS (ESLint, Webpack)",
-    cardClass: "card portrait"
+    cardClass: "card portrait card-pomodoro"
+  });
+
+  card.cardTwitch = createCard({
+    elemId: "card-id-twitch",
+    title: "Twitch Viewer",
+    description: "A Twitch API Responsive Viewer",
+    demoUrl: "https://tforward.github.io/fccTwitchTV/",
+    codeUrl: "https://github.com/tforward/fccTwitchTV",
+    tools: "HTML, CSS (Flexbox), JS (ESLint, Webpack, Twitch API)",
+    imageName: "twitch",
+    imgClass: "card-img-landscape",
+    cardClass: "card landscape card-twitch"
   });
 
   card.cardGridImage = createCard({
-    elemId: "card-gridImage",
+    elemId: "card-id-gridImage",
     title: "Grid 5x5",
     description: "A just for fun experiment with CSS Grid",
     demoUrl: "https://tforward.github.io/gridImage/",
@@ -72,23 +68,11 @@ export function defineCards() {
     imageName: "grid5x5",
     imgClass: "card-img-portrait",
     tools: "HTML, CSS (Flexbox, Grid), JS (ESLint, Webpack)",
-    cardClass: "card portrait"
-  });
-
-  card.cardSimon = createCard({
-    elemId: "card-simon",
-    title: "Simon Game",
-    description: "The classic 1980's game Simon",
-    demoUrl: "https://tforward.github.io/fccSimon/",
-    codeUrl: "https://github.com/tforward/fccSimon",
-    imageName: "simon",
-    imgClass: "card-img-portrait",
-    tools: "HTML, CSS (Flexbox), JS (ESLint, Webpack)",
-    cardClass: "card portrait"
+    cardClass: "card portrait card-gridImage"
   });
 
   card.cardTicTac = createCard({
-    elemId: "card-tictac",
+    elemId: "card-id-tictac",
     title: "Tic Tac Toe Game",
     description: "The always classic Tic Tac Toe!",
     demoUrl: "https://tforward.github.io/fccTicTacToe/",
@@ -96,11 +80,23 @@ export function defineCards() {
     imageName: "tictac",
     imgClass: "card-img-portrait",
     tools: "HTML, CSS (Flexbox), JS (ESLint, Gulp)",
-    cardClass: "card portrait"
+    cardClass: "card portrait card-tictac"
+  });
+
+  card.cardSimon = createCard({
+    elemId: "card-id-simon",
+    title: "Simon Game",
+    description: "The classic 1980's game Simon",
+    demoUrl: "https://tforward.github.io/fccSimon/",
+    codeUrl: "https://github.com/tforward/fccSimon",
+    imageName: "simon",
+    imgClass: "card-img-portrait",
+    tools: "HTML, CSS (Flexbox), JS (ESLint, Webpack)",
+    cardClass: "card portrait card-simon"
   });
 
   card.cardLeafshoot = createCard({
-    elemId: "card-leaf",
+    elemId: "card-id-leaf",
     title: "LeafShoot",
     description: "A responsive map template",
     demoUrl: "https://tforward.github.io/LeafShoot/",
@@ -108,11 +104,11 @@ export function defineCards() {
     imageName: "leafshoot",
     imgClass: "card-img-landscape",
     tools: "HTML, CSS (Bootstrap), JS (Leaflet)",
-    cardClass: "card landscape"
+    cardClass: "card landscape card-leaf"
   });
 
   card.cardCBC = createCard({
-    elemId: "card-cbc",
+    elemId: "card-id-cbc",
     title: "CSS Grid CBC Tribute Logo",
     description: "A CSS Grid tribute to the CBC logo",
     demoUrl: "https://codepen.io/tforward/full/JZavoY/",
@@ -120,23 +116,11 @@ export function defineCards() {
     imageName: "cbc",
     imgClass: "card-img-portrait",
     tools: "HTML, CSS (Grid)",
-    cardClass: "card portrait"
-  });
-
-  card.cardQuote = createCard({
-    elemId: "card-quote",
-    title: "Random Quote Machine",
-    description: "A random quote machine",
-    demoUrl: "https://codepen.io/tforward/full/BZWqQp/",
-    codeUrl: "https://codepen.io/tforward/pen/BZWqQp",
-    imageName: "quote",
-    imgClass: "card-img-portrait",
-    tools: "HTML, CSS, JS",
-    cardClass: "card portrait"
+    cardClass: "card portrait card-cbc"
   });
 
   card.cardCutPolygon = createCard({
-    elemId: "card-cutPolygon",
+    elemId: "card-id-cutPolygon",
     title: "ArcPy tool: Cut Polygon by line(s)",
     description: "Cut a polygon by line(s)",
     demoUrl: "https://i.imgur.com/ZF6m98j.gifv",
@@ -144,11 +128,23 @@ export function defineCards() {
     imageName: "cutPolygon",
     imgClass: "card-img-portrait",
     tools: "Python, ArcPy",
-    cardClass: "card portrait"
+    cardClass: "card portrait card-cutPolygon"
+  });
+
+  card.cardQuote = createCard({
+    elemId: "card-id-quote",
+    title: "Random Quote Machine",
+    description: "A random quote machine",
+    demoUrl: "https://codepen.io/tforward/full/BZWqQp/",
+    codeUrl: "https://codepen.io/tforward/pen/BZWqQp",
+    imageName: "quote",
+    imgClass: "card-img-portrait",
+    tools: "HTML, CSS, JS",
+    cardClass: "card portrait card-quote"
   });
 
   card.cardCalgaryMap = createCard({
-    elemId: "card-calgaryMap",
+    elemId: "card-id-calgaryMap",
     title: "Calgary Population Density 2014",
     description: "Calgary Population Density 2014",
     demoUrl: "http://tforward.github.io/calgary_pop_2014/",
@@ -156,7 +152,7 @@ export function defineCards() {
     imageName: "Calgary_2014_Pop",
     imgClass: "card-img-portrait",
     tools: "Bootstrap, Leaflet, QGIS",
-    cardClass: "card portrait"
+    cardClass: "card portrait card-calgaryMap"
   });
 
   return card;

@@ -17,8 +17,8 @@ myBase.initApplication = function init() {
 
   const card = defineCards();
   const projects = document.getElementById("projects");
-  const projectsContainer = document.createElement("div");
-  projectsContainer.className = "projects-container";
+  const projectsContainer = document.createElement("ul");
+  projectsContainer.className = "projects-grid card-list";
 
   // Add all cards to the project container
   Object.keys(card).forEach(key => {
@@ -26,7 +26,7 @@ myBase.initApplication = function init() {
   });
 
   // Add project container to the DOM
-  // projects.appendChild(projectsContainer);
+  projects.appendChild(projectsContainer);
 
   // TODO LATER Create a function to semi randomly order the projects or similar
 
