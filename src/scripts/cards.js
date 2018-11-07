@@ -29,7 +29,7 @@ export function defineCards() {
     description: "A Responsive Formula Expression Logic Calculator",
     demoUrl: "https://tforward.github.io/JSCalculator/",
     codeUrl: "https://github.com/tforward/JSCalculator",
-    tools: "HTML, CSS (Grid), JS (ESLint)",
+    tools: "CSS (Grid), JS (ESLint)",
     imageName: "calculator",
     imgClass: "card-img-portrait",
     cardClass: "card-calc card portrait"
@@ -43,7 +43,7 @@ export function defineCards() {
     codeUrl: "https://github.com/tforward/fccPomodoro",
     imageName: "pomodoro",
     imgClass: "card-img-portrait",
-    tools: "HTML, CSS (Flexbox, Grid, Variables), JS (ESLint, Webpack)",
+    tools: "CSS (Flexbox, Grid, Variables), JS (ESLint, Webpack)",
     cardClass: "card portrait card-pomodoro"
   });
 
@@ -53,7 +53,7 @@ export function defineCards() {
     description: "A Twitch API Responsive Viewer",
     demoUrl: "https://tforward.github.io/fccTwitchTV/",
     codeUrl: "https://github.com/tforward/fccTwitchTV",
-    tools: "HTML, CSS (Flexbox), JS (ESLint, Webpack, Twitch API)",
+    tools: "CSS (Flexbox), JS (ESLint, Webpack, Twitch API)",
     imageName: "twitch",
     imgClass: "card-img-landscape",
     cardClass: "card landscape card-twitch"
@@ -67,7 +67,7 @@ export function defineCards() {
     codeUrl: "https://github.com/tforward/gridImage",
     imageName: "grid5x5",
     imgClass: "card-img-portrait",
-    tools: "HTML, CSS (Flexbox, Grid), JS (ESLint, Webpack)",
+    tools: "CSS (Flexbox, Grid), JS (ESLint, Webpack)",
     cardClass: "card portrait card-gridImage"
   });
 
@@ -79,7 +79,7 @@ export function defineCards() {
     codeUrl: "https://github.com/tforward/fccTicTacToe",
     imageName: "tictac",
     imgClass: "card-img-portrait",
-    tools: "HTML, CSS (Flexbox), JS (ESLint, Gulp)",
+    tools: "CSS (Flexbox), JS (ESLint, Gulp)",
     cardClass: "card portrait card-tictac"
   });
 
@@ -91,7 +91,7 @@ export function defineCards() {
     codeUrl: "https://github.com/tforward/fccSimon",
     imageName: "simon",
     imgClass: "card-img-portrait",
-    tools: "HTML, CSS (Flexbox), JS (ESLint, Webpack)",
+    tools: "CSS (Flexbox), JS (ESLint, Webpack)",
     cardClass: "card portrait card-simon"
   });
 
@@ -103,7 +103,7 @@ export function defineCards() {
     codeUrl: "https://github.com/tforward/LeafShoot",
     imageName: "leafshoot",
     imgClass: "card-img-landscape",
-    tools: "HTML, CSS (Bootstrap), JS (Leaflet)",
+    tools: "CSS (Bootstrap), JS (Leaflet)",
     cardClass: "card landscape card-leaf"
   });
 
@@ -115,7 +115,7 @@ export function defineCards() {
     codeUrl: "https://codepen.io/tforward/pen/JZavoY",
     imageName: "cbc",
     imgClass: "card-img-portrait",
-    tools: "HTML, CSS (Grid)",
+    tools: "CSS (Grid)",
     cardClass: "card portrait card-cbc"
   });
 
@@ -139,7 +139,7 @@ export function defineCards() {
     codeUrl: "https://codepen.io/tforward/pen/BZWqQp",
     imageName: "quote",
     imgClass: "card-img-portrait",
-    tools: "HTML, CSS, JS",
+    tools: "CSS, JS",
     cardClass: "card portrait card-quote"
   });
 

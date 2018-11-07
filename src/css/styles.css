@@ -28,12 +28,6 @@ body {
   /* font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  */
 }
 
-/* body {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-} */
-
 img {
 	display: block;
 	border: 0;
@@ -105,31 +99,7 @@ p {
 	padding: 1em 0;
 }
 
-/* h1 {
-  font-size: 9vmin;
-  margin: auto;
-  position: absolute;
-  top: 55%;
-  left: -20vmin;
-  z-index: 2001;
-}
-
-h1::after {
-  content: "";
-  border: var(--lightline) solid black;
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
-  right: 1%;
-}
-
-h2 {
-  font-size: 4vmin;
-  margin: 1vmin;
-  position: relative;
-}
-
-h3 {
+/* h3 {
   font-size: calc(3vmin + 1em);
   margin: 1vmin;
   position: relative;
@@ -253,43 +223,72 @@ General styles
 ================ */
 
 .hero {
-  display: grid;
   height: 90vh;
-  align-items: center;
-  justify-items: center;
   position: relative;
+  padding: 4em 0;
 }
 
-.title-info {
-  display: flex;
+.title-block {
+  z-index: 999;
   position: absolute;
-  top: 70%;
-  left: -12vmin;
-  height: 6vmin;
-  z-index: 2001;
+  left: calc(9vmin + 2em);
 }
 
 .title-name {
-  margin: auto;
-  position: absolute;
-  top: 51%;
-  left: -9vmin;
   z-index: 2001;
-}
-
-.map-pos {
   position: relative;
-  left: 10%;
+  top: 8px;
+  margin: 0;
+  padding: 0;
+  font-size: calc(2vmin + 1em);
+  white-space: nowrap;
 }
 
-.maphead-bc {
+.title-desc {
+  z-index: 2001;
+  margin: 0;
+  padding: 0;
+  font-size: calc(3vmin + 1em);
+  white-space: nowrap;
+}
+
+.title-info {
+  /* display: flex;
+  position: absolute;
+  top: 70%;
+  left: 17vmin;
+  height: 6vmin;
+  z-index: 2001; */
+}
+
+
+
+/* .title-name, h2 {
+  font-size: 4vmin;
+  margin: 1vmin;
+  position: relative;
+} */
+
+
+
+/* .title-desc, h1 {
+  font-size: 6vmin;
+  margin: 1vmin;
+  position: relative;
+}  */
+
+/* .title-desc, h1::after {
+  content: "";
+  position: absolute;
+} */
+
+.maphead-bg {
   background-size: contain;
-}
-
-#map {
+  background-color: azure;
   width: 59vmin;
   height: 65vmin;
   z-index: 1;
+  overflow: hidden;
 }
 
 .maphead {
@@ -297,12 +296,12 @@ General styles
   height: 65vmin;
   position: relative;
   /* Backup colour */
-  background-color: var(--lightblue);
+  background-color: azure;
   background: url("../images/maphead.svg");
   background-size: contain;
   z-index: 1001;
+  overflow: hidden;
   }
-  
 
 .leaflet-bottom {
   z-index: -1;
@@ -374,6 +373,7 @@ General styles
 --------------------------------------------------------------*/
 
 .card {
+  position: relative;
  }
 
 .card-thumb {
@@ -390,22 +390,32 @@ General styles
   opacity: 0.93;
 }
 
+.btn-bottom {
+  position: relative;
+  bottom: -15px;
+}
+
 .card-btn {
   background-color: #79a6f6;
   color: white;
   padding: 0.6em 1.1em;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: calc(1.5vmin + 0.5em);
+  font-size: calc(1.5vmin + 0.3em);
 }
 
 .card-btn:hover {
   background-color: #5392ff;
+  bottom: 1px;
 }
 
 .card-thumb:hover {
   position: relative;
-  bottom: 2px;
+  bottom: 1px;
+}
+
+.card-toolbox {
+  font-size: calc(1.3vmin + 0.3em);
 }
 
 
@@ -562,6 +572,10 @@ General styles
 
 .center-text {
   text-align: center;
+}
+
+.center-auto {
+  margin: 0 auto;
 }
 
 .center {
