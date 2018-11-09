@@ -3,17 +3,24 @@ import { ElemDelegator, FragmentDelegator } from "./olooElem";
 const createCard = function card(data) {
   // Just use the same syntax for node elements
 
-  const state = `
-    <li id="${data.elemId}" class="card ${data.cardClass}">
+  const state = `<li>
+  <div id="${data.elemId}" class="card class="${data.cardClass}">
+    <div class="card-frame">
+      <a class="card-thumb" href="${data.demoUrl}" target="_blank">
+        <div class="card-img" style="background-image: url(../images/${data.imageName}.jpg)"></div>
+      </a>
+    </div>
+    <div class="card-info center-text">
       <h3 class="card-title">${data.title}</h3>
-        <span class="card-toolbox">${data.tools}</span>
-        <a class="card-thumb" style="background-image: url(../images/${data.imageName}.jpg)" href="${
-    data.demoUrl
-  }" target="_blank"></a>
-        <div class="btn-bottom center">
-            <a class="card-btn card-btn-text" href="${data.codeUrl}" target="_blank">CODE</a>
-        </div>
-    </li>`;
+      <h4 class="card-toolbox">${data.tools}</h4>
+    </div>
+    <div class="card-footer center">
+      <a class="noTextDecoration" href="${data.codeUrl}" target="_blank">
+        <div class="card-btn card-btn-text center">CODE</div>
+      </a>
+    </div>
+  </div>
+</li>`;
 
   // If you add an object to create it will show up on the __proto__
   // for that object, default null.
