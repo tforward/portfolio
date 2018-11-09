@@ -10,7 +10,7 @@ const createCard = function card(data) {
         <a class="card-thumb" style="background-image: url(../images/${data.imageName}.jpg)" href="${
     data.demoUrl
   }" target="_blank"></a>
-        <div class="btn-bottom center-text">
+        <div class="btn-bottom center">
             <a class="card-btn card-btn-text" href="${data.codeUrl}" target="_blank">CODE</a>
         </div>
     </li>`;
@@ -32,7 +32,7 @@ export function defineCards() {
     tools: "CSS (Grid), JS (ESLint)",
     imageName: "calculator",
     imgClass: "card-img-portrait",
-    cardClass: "card-calc card portrait"
+    cardClass: "card-calc card"
   });
 
   card.cardPomodoro = createCard({
@@ -44,7 +44,7 @@ export function defineCards() {
     imageName: "pomodoro",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox, Grid, Variables), JS (ESLint, Webpack)",
-    cardClass: "card portrait card-pomodoro"
+    cardClass: "card card-pomodoro"
   });
 
   card.cardTwitch = createCard({
@@ -56,7 +56,7 @@ export function defineCards() {
     tools: "CSS (Flexbox), JS (ESLint, Webpack, Twitch API)",
     imageName: "twitch",
     imgClass: "card-img-landscape",
-    cardClass: "card landscape card-twitch"
+    cardClass: "card card-twitch"
   });
 
   card.cardGridImage = createCard({
@@ -68,7 +68,7 @@ export function defineCards() {
     imageName: "grid5x5",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox, Grid), JS (ESLint, Webpack)",
-    cardClass: "card portrait card-gridImage"
+    cardClass: "card card-gridImage"
   });
 
   card.cardTicTac = createCard({
@@ -80,7 +80,7 @@ export function defineCards() {
     imageName: "tictac",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox), JS (ESLint, Gulp)",
-    cardClass: "card portrait card-tictac"
+    cardClass: "card card-tictac"
   });
 
   card.cardSimon = createCard({
@@ -92,7 +92,7 @@ export function defineCards() {
     imageName: "simon",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox), JS (ESLint, Webpack)",
-    cardClass: "card portrait card-simon"
+    cardClass: "card card-simon"
   });
 
   card.cardLeafshoot = createCard({
@@ -104,7 +104,7 @@ export function defineCards() {
     imageName: "leafshoot",
     imgClass: "card-img-landscape",
     tools: "CSS (Bootstrap), JS (Leaflet)",
-    cardClass: "card landscape card-leaf"
+    cardClass: "card card-leaf"
   });
 
   card.cardCBC = createCard({
@@ -116,7 +116,7 @@ export function defineCards() {
     imageName: "cbc",
     imgClass: "card-img-portrait",
     tools: "CSS (Grid)",
-    cardClass: "card portrait card-cbc"
+    cardClass: "card card-cbc"
   });
 
   card.cardCutPolygon = createCard({
@@ -128,7 +128,7 @@ export function defineCards() {
     imageName: "cutPolygon",
     imgClass: "card-img-portrait",
     tools: "Python, ArcPy",
-    cardClass: "card portrait card-cutPolygon"
+    cardClass: "card card-cutPolygon"
   });
 
   card.cardQuote = createCard({
@@ -140,7 +140,7 @@ export function defineCards() {
     imageName: "quote",
     imgClass: "card-img-portrait",
     tools: "CSS, JS",
-    cardClass: "card portrait card-quote"
+    cardClass: "card card-quote"
   });
 
   card.cardCalgaryMap = createCard({
@@ -152,7 +152,7 @@ export function defineCards() {
     imageName: "Calgary_2014_Pop",
     imgClass: "card-img-portrait",
     tools: "Bootstrap, Leaflet, QGIS",
-    cardClass: "card portrait card-calgaryMap"
+    cardClass: "card card-calgaryMap"
   });
 
   return card;

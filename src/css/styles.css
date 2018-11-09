@@ -377,12 +377,12 @@ General styles
  }
 
 .card-thumb {
+  position: relative;
   display: block;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   min-height: calc(30vmin + 4em);
-  position: relative;
   margin: 1em;
 }
 
@@ -391,8 +391,11 @@ General styles
 }
 
 .btn-bottom {
-  position: relative;
-  bottom: -15px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
 }
 
 .card-btn {
