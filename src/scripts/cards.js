@@ -3,16 +3,18 @@ import { ElemDelegator, FragmentDelegator } from "./olooElem";
 const createCard = function card(data) {
   // Just use the same syntax for node elements
 
-  const state = `<li>
-  <div id="${data.elemId}" class="card class="${data.cardClass}">
+  const state = `<li class="${data.cardClass}">
+  <div id="${data.elemId}">
     <div class="card-frame">
       <a class="card-thumb" href="${data.demoUrl}" target="_blank">
-        <div class="card-img" style="background-image: url(../images/${data.imageName}.jpg)"></div>
+        <div class="card-img" style="background-image: url(../images/${data.imageName}.jpg)" alt="Open demo of ${
+    data.title
+  }"></div>
       </a>
     </div>
     <div class="card-info center-text">
-      <h3 class="card-title">${data.title}</h3>
-      <h4 class="card-toolbox">${data.tools}</h4>
+      <h4 class="card-title">${data.title}</h4>
+      <h7 class="card-toolbox">${data.tools}</h7>
     </div>
     <div class="card-footer center">
       <a class="noTextDecoration" href="${data.codeUrl}" target="_blank">
@@ -39,7 +41,7 @@ export function defineCards() {
     tools: "CSS (Grid), JS (ESLint)",
     imageName: "calculator",
     imgClass: "card-img-portrait",
-    cardClass: "card-calc card"
+    cardClass: "card card-calc"
   });
 
   card.cardPomodoro = createCard({
@@ -50,7 +52,7 @@ export function defineCards() {
     codeUrl: "https://github.com/tforward/fccPomodoro",
     imageName: "pomodoro",
     imgClass: "card-img-portrait",
-    tools: "CSS (Flexbox, Grid, Variables), JS (ESLint, Webpack)",
+    tools: "CSS (Flexbox, Grid), JS (ESLint, Webpack)",
     cardClass: "card card-pomodoro"
   });
 
@@ -114,6 +116,18 @@ export function defineCards() {
     cardClass: "card card-leaf"
   });
 
+  card.cardQuote = createCard({
+    elemId: "card-id-quote",
+    title: "Random Quote Machine",
+    description: "A random quote machine",
+    demoUrl: "https://codepen.io/tforward/full/BZWqQp/",
+    codeUrl: "https://codepen.io/tforward/pen/BZWqQp",
+    imageName: "quote",
+    imgClass: "card-img-portrait",
+    tools: "CSS, JS",
+    cardClass: "card card-quote"
+  });
+
   card.cardCBC = createCard({
     elemId: "card-id-cbc",
     title: "CSS Grid CBC Tribute Logo",
@@ -128,7 +142,7 @@ export function defineCards() {
 
   card.cardCutPolygon = createCard({
     elemId: "card-id-cutPolygon",
-    title: "ArcPy tool: Cut Polygon by line(s)",
+    title: "ArcPy: Cut Polygon by line(s)",
     description: "Cut a polygon by line(s)",
     demoUrl: "https://i.imgur.com/ZF6m98j.gifv",
     codeUrl: "https://github.com/tforward/CutPolygonByLines",
@@ -138,22 +152,10 @@ export function defineCards() {
     cardClass: "card card-cutPolygon"
   });
 
-  card.cardQuote = createCard({
-    elemId: "card-id-quote",
-    title: "Random Quote Machine",
-    description: "A random quote machine",
-    demoUrl: "https://codepen.io/tforward/full/BZWqQp/",
-    codeUrl: "https://codepen.io/tforward/pen/BZWqQp",
-    imageName: "quote",
-    imgClass: "card-img-portrait",
-    tools: "CSS, JS",
-    cardClass: "card card-quote"
-  });
-
   card.cardCalgaryMap = createCard({
     elemId: "card-id-calgaryMap",
-    title: "Calgary Population Density 2014",
-    description: "Calgary Population Density 2014",
+    title: "Calgary Population Density",
+    description: "Calgary Population Density",
     demoUrl: "http://tforward.github.io/calgary_pop_2014/",
     codeUrl: "https://github.com/tforward/calgary_pop_2014",
     imageName: "Calgary_2014_Pop",

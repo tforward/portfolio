@@ -30,9 +30,8 @@ body {
 
 img {
 	display: block;
-	border: 0;
-	width: 100%;
-	height: auto;
+	width: auto;
+  height: auto;
 }
 
 *, *::before, *::after {
@@ -89,7 +88,11 @@ textarea {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6,
+h7, {
 	margin: 0;
 	padding: 1em 0;
 }
@@ -163,38 +166,6 @@ General styles
   margin: 0 auto;
 }
 
-.card-list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.card-list li {
-  padding: 5px 0;
-  border-bottom: 1px solid black;
-}
-
-.card-list li:last-child {
-  border-bottom: none;
-}
-
-.card-title {
-  margin: 0 0 0 0;
-  padding: 0;
-  line-height: 1.3em;
-}
-
-.card-desc {
-  margin: .5em 0;
-  padding: 0;
-}
-
-.card-btn-text {
-  margin: .5em 0;
-  padding: 0;
-  font-weight: bold;
-}
-
 .col-orphan {
 	padding: 1em 2em;
   background: #272427;
@@ -229,8 +200,9 @@ General styles
 
 .title-block {
   z-index: 999;
-  position: absolute;
-  left: calc(9vmin + 2em);
+  top: 2em;
+  left: -1em;
+  position: relative;
 }
 
 .title-name {
@@ -251,32 +223,32 @@ General styles
   white-space: nowrap;
 }
 
-.title-info {
-  /* display: flex;
+/* .title-info {
+  display: flex;
   position: absolute;
   top: 70%;
   left: 17vmin;
   height: 6vmin;
-  z-index: 2001; */
+  z-index: 2001; 
 }
 
 
 
-/* .title-name, h2 {
+.title-name, h2 {
   font-size: 4vmin;
   margin: 1vmin;
   position: relative;
-} */
+} 
 
 
 
-/* .title-desc, h1 {
+.title-desc, h1 {
   font-size: 6vmin;
   margin: 1vmin;
   position: relative;
-}  */
+} 
 
-/* .title-desc, h1::after {
+.title-desc, h1::after {
   content: "";
   position: absolute;
 } */
@@ -288,6 +260,9 @@ General styles
   height: 65vmin;
   z-index: 1;
   overflow: hidden;
+  left: 3em;
+  margin-bottom: 6em;
+  /* pointer-events: none; */
 }
 
 .maphead {
@@ -346,6 +321,7 @@ General styles
   text-align: center;
   margin-top: 4em;
   position: relative;
+  width: 100%;
 }
 
 .whiteArrow {
@@ -370,6 +346,38 @@ General styles
 /*--------------------------------------------------------------
                      Card, Thumbs and Btn
 --------------------------------------------------------------*/
+
+.card-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid black;
+}
+
+.card-list li:last-child {
+  border-bottom: none;
+}
+
+.card-title {
+  margin: 0 0 0 0;
+  padding: 0;
+  line-height: 1.3em;
+}
+
+.card-desc {
+  margin: .5em 0;
+  padding: 0;
+}
+
+.card-btn-text {
+  margin: .5em 0;
+  padding: 0;
+  font-weight: bold;
+}
 
 .card {
   position: relative;
@@ -549,7 +557,7 @@ General styles
     
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
     
     .card-1 {
