@@ -71,7 +71,6 @@ img {
 	z-index: 100000;
 }
 
-
 /*--------------------------------------------------------------
                      Typography Tags
 --------------------------------------------------------------*/
@@ -102,85 +101,15 @@ p {
 	padding: 1em 0;
 }
 
-/* h3 {
-  font-size: calc(3vmin + 1em);
-  margin: 1vmin;
-  position: relative;
-}
-
-h4 {
-  margin: 1vmin 0;
-  font-size: calc(2vmin + 0.5rem);
-  line-height: calc(3vmin + 0.5rem);
-}
-
-h5 {
-  font-size: calc(3vmin + 0.6rem);
-  margin: 1vmin;
-} */
-
-
 /*--------------------------------------------------------------
 General styles
 --------------------------------------------------------------*/
-
-.masthead {
-  padding: 2em;
-  background: #272427;
-  text-align: center;
-}
-
-.masthead img {
-  width: 180px;
-  margin: 0 auto;
-}
-
-.site-title {
-  margin: 1em 0 0;
-  padding: 0;
-  font-size: 1.5625em;
-  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #c96;
-}
-
-.site-description {  
-  margin: 0 0 1em;
-  padding: 0;
-  font-size: 1em;
-  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-weight: 400;
-  color: hsla(0,0%,100%,.6);
-}
-
-.page-title {
-  text-align: center;
-  background-image: url(https://2017.europe.wordcamp.org/files/2017/01/background-pattern-01.png);
-  background-color: #f5ebe0
-}
 
 .main-content {
 	background: white;
   padding: 2em;
   margin: 0 auto;
 }
-
-.col-orphan {
-	padding: 1em 2em;
-  background: #272427;
-	color: white;
-}
-
-.col-orphan a {
-	color: white;
-}
-
-.col-orphan a:hover,
-.col-orphan a:focus {
-  border-bottom: 1px solid white;
-}
-
 
 /* META */
 
@@ -199,66 +128,42 @@ General styles
 }
 
 .title-block {
-  z-index: 999;
-  top: 2em;
+  z-index: 1000;
+  top: 3em;
   left: -1em;
   position: relative;
 }
 
 .title-name {
-  z-index: 2001;
   position: relative;
   top: 8px;
   margin: 0;
   padding: 0;
   font-size: calc(2vmin + 1em);
   white-space: nowrap;
+  font-size: 1.5625em;
+  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .title-desc {
-  z-index: 2001;
   margin: 0;
   padding: 0;
   font-size: calc(3vmin + 1em);
   white-space: nowrap;
+  color: rgb(248, 129, 17);
+  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
 }
-
-/* .title-info {
-  display: flex;
-  position: absolute;
-  top: 70%;
-  left: 17vmin;
-  height: 6vmin;
-  z-index: 2001; 
-}
-
-
-
-.title-name, h2 {
-  font-size: 4vmin;
-  margin: 1vmin;
-  position: relative;
-} 
-
-
-
-.title-desc, h1 {
-  font-size: 6vmin;
-  margin: 1vmin;
-  position: relative;
-} 
-
-.title-desc, h1::after {
-  content: "";
-  position: absolute;
-} */
 
 .maphead-bg {
   background-size: contain;
   background-color: azure;
   width: 59vmin;
   height: 65vmin;
-  z-index: 1;
+  z-index: 500;
   overflow: hidden;
   left: 3em;
   margin-bottom: 6em;
@@ -273,13 +178,13 @@ General styles
   background-color: azure;
   background: url("../images/maphead.svg");
   background-size: contain;
-  z-index: 1001;
+  z-index: 999;
   overflow: hidden;
-  }
+}
 
 .leaflet-bottom {
   z-index: -1;
-  }
+}
 
 /* CONTACTS */
 
@@ -308,7 +213,7 @@ General styles
   background-color: #F9F1EA;
   display: flex;
   flex-direction: column;
-  z-index: -10;
+  z-index: -100;
 }
 
 .sum-middle {
@@ -316,8 +221,7 @@ General styles
   background-color: rgb(255, 255, 255);
   /* RGBa with 0.6 opacity */
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 1em 8vmin;
-  border-radius: 3px; 
+  padding: 1em 6vmin;
   text-align: center;
   margin-top: 4em;
   position: relative;
@@ -368,11 +272,6 @@ General styles
   line-height: 1.3em;
 }
 
-.card-desc {
-  margin: .5em 0;
-  padding: 0;
-}
-
 .card-btn-text {
   margin: .5em 0;
   padding: 0;
@@ -384,7 +283,6 @@ General styles
   width: 100%;
   height: calc(25vmin + 12em);
   background-color: white;
-  z-index: 1;
  }
 
  .card-frame {
@@ -421,19 +319,18 @@ General styles
 }
 
 .card-toolbox {
-  font-size: calc(1.5vmin + 0.3em);
+  font-size: calc(1.5vmin + 0.4em);
   margin: 0 1em;
 }
 
 .card-btn {
-  height: 5vmin;
-  width: calc(8vmin + 3em);
+  height: calc(3vmin + 1em);
+  width: calc(7vmin + 2em);
   background-color: #79a6f6;
   color: white;
   padding: 0.6em 1.1em;
   font-size: calc(1.5vmin + 0.3em);
 }
-
 
 .card-btn:hover {
   background-color: #5392ff;
@@ -445,10 +342,6 @@ General styles
   bottom: 1px;
 }
 
-.card-toolbox {
-  font-size: calc(1.3vmin + 0.3em);
-}
-
 .card-footer {
   position: absolute;
   right: 0;
@@ -456,8 +349,6 @@ General styles
   left: 0;
   text-align: center;
 }
-
-
 
 /*--------------------------------------------------------------
       If no grid support, limit width and center align all
@@ -519,8 +410,6 @@ General styles
     }
   }
 }
-
-/* TODO Rework the grid scale names */
 
 @supports (display: grid) {
   @media screen and (min-width: 1100px) {
@@ -592,17 +481,16 @@ General styles
   }
 }
 
-
 /* FOOTER */
 
 .footer {
   padding: var(--padding);
-  background-color: #ECF7FC;
-  flex-shrink: 0;
+  background-color: white;
+  height: 10vh;
+  background: url("../images/topography.svg");
+  background-color: #F9F1EA;
+  z-index: -10;
 }
-
-
-/* === GRID === */
 
 /*--------------------------------------------------------------
  UTILITY 
