@@ -42,7 +42,7 @@ myBase.initApplication = function init() {
   }
 };
 
-const scroll = new SmoothScroll("a[href*='#summary']", {
+const scroll = new SmoothScroll("a[href*='#PortfolioStart']", {
   // Speed & Easing
   speed: 800, // Integer. How fast to complete the scroll in milliseconds
   clip: true, // If true, adjust scroll distance to prevent abrupt stops near the bottom of the page

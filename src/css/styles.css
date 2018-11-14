@@ -243,7 +243,7 @@ General styles
   top: 90vh;
 }
 
-.nav-down-link, nav-down-link:visited, nav-down-link:hover, nav-down-link:active {
+.nav-down-link {
   color: black;
 }
 
@@ -353,6 +353,7 @@ General styles
 /*--------------------------------------------------------------
       If no grid support, limit width and center align all
 --------------------------------------------------------------*/
+
 @supports not (display: grid) {
   .main-content {
     max-width: 42em;
@@ -378,7 +379,7 @@ General styles
     
     .projects-grid {
       display: grid;
-      grid-gap: 1em;
+      grid-gap: 5vmin;
       grid-template-columns: repeat(auto-fill, 1fr);
       grid-auto-rows: minmax(100px, 1fr);
       grid-auto-flow: row dense;

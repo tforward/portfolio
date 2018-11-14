@@ -6,10 +6,10 @@ const createCard = function card(data) {
   const state = `<li class="${data.cardClass}">
   <div id="${data.elemId}">
     <div class="card-frame">
-      <a class="card-thumb" href="${data.demoUrl}" target="_blank">
-        <div class="card-img" style="background-image: url(../images/${data.imageName}.jpg)" alt="Open demo of ${
+      <a class="card-thumb" href="${data.demoUrl}" target="_blank" alt="Open demo of ${
     data.title
-  }"></div>
+  }" aria-label="Open demo of ${data.title}">
+        <div class="card-img" style="background-image: url(../images/${data.imageName}.jpg)"></div>
       </a>
     </div>
     <div class="card-info center-text">
@@ -17,7 +17,9 @@ const createCard = function card(data) {
       <h7 class="card-toolbox">${data.tools}</h7>
     </div>
     <div class="card-footer center">
-      <a class="noTextDecoration" href="${data.codeUrl}" target="_blank">
+      <a class="noTextDecoration" href="${data.codeUrl}" target="_blank" alt="View code for ${
+    data.codeUrl
+  }" aria-label="View code for ${data.codeUrl}">
         <div class="card-btn card-btn-text center">CODE</div>
       </a>
     </div>
