@@ -37,7 +37,9 @@ myBase.initApplication = function init() {
   function eventController(args, e) {
     const id = getTargetId(e, args.tags);
     if (id !== undefined) {
-      console.log(id);
+      if (id.startsWith("filter")) {
+        filterProjects(id);
+      }
     }
   }
 };
@@ -49,9 +51,12 @@ const scroll = new SmoothScroll("a[href*='#PortfolioStart']", {
   easing: "easeInOutCubic" // Easing pattern to use
 });
 
-// myBase.main = function main(id) {
-//   // const self = myApp.obj[id];
-// };
+function filterProjects(id) {
+  const selected = document.getElementsByClassName("filter-selected")[0];
+  selected.classList.remove("filter-selected");
+  const newSelection = document.getElementById(id);
+  newSelection.classList.add("filter-selected");
+}
 
 // ======================================================================
 // Handler for when the DOM is fully loaded
