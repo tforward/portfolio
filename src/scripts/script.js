@@ -38,7 +38,8 @@ myBase.initApplication = function init() {
     const id = getTargetId(e, args.tags);
     if (id !== undefined) {
       if (id.startsWith("filter")) {
-        filterProjects(id);
+        filterProjectsBtn(id);
+        console.log(id);
       }
     }
   }
@@ -51,11 +52,40 @@ const scroll = new SmoothScroll("a[href*='#PortfolioStart']", {
   easing: "easeInOutCubic" // Easing pattern to use
 });
 
-function filterProjects(id) {
+function filterProjectsBtn(id) {
   const selected = document.getElementsByClassName("filter-selected")[0];
   selected.classList.remove("filter-selected");
   const newSelection = document.getElementById(id);
   newSelection.classList.add("filter-selected");
+  filterProjects(id);
+}
+
+function filterProjects(id) {
+  if (id === "filter-projects") {
+    removeClass("project", "hidden-project");
+    addClass("fun", "hidden-project");
+  } else if (id === "filter-fun") {
+    removeClass("fun", "hidden-project");
+    addClass("project", "hidden-project");
+  } else if (id === "filter-all") {
+    removeClass("fun", "hidden-project");
+    removeClass("project", "hidden-project");
+  }
+}
+
+function addClass(tag, theClass) {
+  const projectList = document.getElementsByClassName(tag);
+  console.log(projectList);
+  for (let i = 0; i < projectList.length; i += 1) {
+    projectList[i].classList.add(theClass);
+  }
+}
+
+function removeClass(tag, theClass) {
+  const projectListRemove = document.getElementsByClassName(tag);
+  for (let i = 0; i < projectListRemove.length; i += 1) {
+    projectListRemove[i].classList.remove(theClass);
+  }
 }
 
 // ======================================================================

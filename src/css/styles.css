@@ -558,3 +558,11 @@ General styles
 .noTextDecoration {
     text-decoration: none;
 }
+
+.hidden {
+  display: none;
+}
+
+.hidden-project {
+  display: none;
+}

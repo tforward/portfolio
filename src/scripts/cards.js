@@ -43,7 +43,7 @@ export function defineCards() {
     tools: "CSS (Grid), JS (ESLint)",
     imageName: "calculator",
     imgClass: "card-img-portrait",
-    cardClass: "card card-calc"
+    cardClass: "card card-calc project"
   });
 
   card.cardPomodoro = createCard({
@@ -55,7 +55,7 @@ export function defineCards() {
     imageName: "pomodoro",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox, Grid), JS (ESLint, Webpack)",
-    cardClass: "card card-pomodoro"
+    cardClass: "card card-pomodoro project"
   });
 
   card.cardTwitch = createCard({
@@ -67,7 +67,7 @@ export function defineCards() {
     tools: "CSS (Flexbox), JS (ESLint, Webpack, Twitch API)",
     imageName: "twitch",
     imgClass: "card-img-landscape",
-    cardClass: "card card-twitch"
+    cardClass: "card card-twitch project"
   });
 
   card.cardGridImage = createCard({
@@ -79,7 +79,7 @@ export function defineCards() {
     imageName: "grid5x5",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox, Grid), JS (ESLint, Webpack)",
-    cardClass: "card card-gridImage"
+    cardClass: "card card-gridImage fun"
   });
 
   card.cardTicTac = createCard({
@@ -91,7 +91,7 @@ export function defineCards() {
     imageName: "tictac",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox), JS (ESLint, Gulp)",
-    cardClass: "card card-tictac"
+    cardClass: "card card-tictac project"
   });
 
   card.cardSimon = createCard({
@@ -103,7 +103,7 @@ export function defineCards() {
     imageName: "simon",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox), JS (ESLint, Webpack)",
-    cardClass: "card card-simon"
+    cardClass: "card card-simon project"
   });
 
   card.cardLeafshoot = createCard({
@@ -115,7 +115,7 @@ export function defineCards() {
     imageName: "leafshoot",
     imgClass: "card-img-landscape",
     tools: "CSS (Bootstrap), JS (Leaflet)",
-    cardClass: "card card-leaf"
+    cardClass: "card card-leaf project"
   });
 
   card.cardQuote = createCard({
@@ -127,7 +127,7 @@ export function defineCards() {
     imageName: "quote",
     imgClass: "card-img-portrait",
     tools: "CSS, JS",
-    cardClass: "card card-quote"
+    cardClass: "card card-quote project"
   });
 
   card.cardCBC = createCard({
@@ -139,7 +139,7 @@ export function defineCards() {
     imageName: "cbc",
     imgClass: "card-img-portrait",
     tools: "CSS (Grid)",
-    cardClass: "card card-cbc"
+    cardClass: "card card-cbc fun"
   });
 
   card.cardCutPolygon = createCard({
@@ -151,7 +151,7 @@ export function defineCards() {
     imageName: "cutPolygon",
     imgClass: "card-img-portrait",
     tools: "Python, ArcPy",
-    cardClass: "card card-cutPolygon"
+    cardClass: "card card-cutPolygon project"
   });
 
   card.cardCalgaryMap = createCard({
@@ -163,7 +163,7 @@ export function defineCards() {
     imageName: "Calgary_2014_Pop",
     imgClass: "card-img-portrait",
     tools: "Bootstrap, Leaflet, QGIS",
-    cardClass: "card card-calgaryMap"
+    cardClass: "card card-calgaryMap project"
   });
 
   return card;
