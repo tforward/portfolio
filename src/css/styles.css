@@ -344,7 +344,7 @@ General styles
 }
 
 .card-toolbox {
-  font-size: calc(1.5vmin + 0.4em);
+  font-size: calc(0.7vmin + 0.6em);
   margin: 0 1em;
 }
 
@@ -356,7 +356,7 @@ General styles
   border: none; 
 	cursor: pointer;
   padding: 0.6em 1.3em;
-  font-size: calc(1.5vmin + 0.3em);
+  font-size: calc(1.3vmin + 0.5em);
   font-weight: bold;
 }
 
