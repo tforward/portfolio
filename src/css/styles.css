@@ -161,13 +161,13 @@ General styles
 .maphead-bg {
   background-size: contain;
   background-color: azure;
-  width: 59vmin;
+  width: 54vmin;
   height: 65vmin;
   z-index: 500;
   overflow: hidden;
   left: 3em;
   margin-bottom: 6em;
-  /* pointer-events: none; */
+  pointer-events: unset;
 }
 
 .maphead {
@@ -180,6 +180,21 @@ General styles
   background-size: contain;
   z-index: 999;
   overflow: hidden;
+}
+
+.cover1 {
+  width: 65vmin;
+  height: 65vmin;
+  position: relative;
+  /* Backup colour */
+  background-color: azure;
+  background: url("../images/maphead.svg");
+  background-size: contain;
+  z-index: 999;
+  overflow: hidden;
+  background-color: red;
+
+  z-index: 9999;
 }
 
 .leaflet-bottom {
