@@ -149,6 +149,7 @@ const pointList = [
 // CSS Transitions for the map
 // Prevent Panning just move to
 // Better random map, I think get random list each time would be better
+// clicking the maphead bring up new map
 
 // leafMap.setView(pointList[0]);
 
