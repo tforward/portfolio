@@ -170,6 +170,16 @@ General styles
   pointer-events: unset;
 }
 
+/* Places a Dot on the map, used for position of new locations off by default */
+.dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  top: 32.5vmin;
+  left: 27vmin;
+}
+
 .maphead {
   width: 65vmin;
   height: 65vmin;
@@ -180,21 +190,6 @@ General styles
   background-size: contain;
   z-index: 999;
   overflow: hidden;
-}
-
-.cover1 {
-  width: 65vmin;
-  height: 65vmin;
-  position: relative;
-  /* Backup colour */
-  background-color: azure;
-  background: url("../images/maphead.svg");
-  background-size: contain;
-  z-index: 999;
-  overflow: hidden;
-  background-color: red;
-
-  z-index: 9999;
 }
 
 .leaflet-bottom {

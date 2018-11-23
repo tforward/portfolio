@@ -6,8 +6,11 @@ import css_ from "../css/styles.css";
 import { EventDelegator, getTargetId } from "./olooEvent";
 import { SubscribersDelegator } from "./olooObserver";
 import { defineCards } from "./cards";
-import leaflet_ from "./leafletembed";
+import { initmap } from "./leafletembed";
 import SmoothScroll from "./smooth-scroll.polyfills.min";
+import { timer } from "./timeIt";
+
+const leafMap = initmap();
 
 const myBase = Object.create(null);
 const myApp = SubscribersDelegator();
@@ -86,6 +89,73 @@ function removeClass(tag, theClass) {
   for (let i = 0; i < projectListRemove.length; i += 1) {
     projectListRemove[i].classList.remove(theClass);
   }
+}
+
+// ======================================================================
+// Map - Change Map
+// ======================================================================
+
+// function getLeafPnt(x, y) {
+//   return new L.LatLng(x, y);
+// }
+
+// function panTo(pnt) {
+//   leafMap.panTo(pnt);
+// }
+
+// function randomIntMinMax(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1) + min);
+// }
+
+// function getRandomCoord() {
+//   const x = randomIntMinMax(46, 68);
+//   const y = randomIntMinMax(-56, -139);
+//   return getLeafPnt(x, y);
+// }
+
+// function getSampleRandomCoords() {
+//   const pointList = [];
+//   for (let i = 0; i < 7; i += 1) {
+//     const pnt = getRandomCoord();
+//     pointList.push(pnt);
+//   }
+//   return pointList;
+// }
+
+function randomSamplePnt() {
+  const pnt = pointList[Math.floor(Math.random() * pointList.length)];
+  console.log(pnt);
+  leafMap.setView(pnt);
+}
+
+// const pointList = getSampleRandomCoords();
+
+leafMap.on("click", e => {
+  console.log(`Lat, Lon : [${e.latlng.lat}, ${e.latlng.lng}], `);
+});
+
+const pointList = [
+  [51.262485898428785, -68.74292437446594],
+  [51.32145337655852, -68.9421481134463],
+  [48.97540875705961, -68.4160813809419],
+  [46.29254831561058, -77.1117600918794],
+  [45.67228256021794, -81.7644700528169],
+  [41.73306131785704, -82.98120562446594],
+  [42.6750284167221, -79.24860010760777],
+  [43.10766561995877, -79.53699175727844],
+  [43.73207342008998, -76.37292898908373]
+];
+
+// CSS Transitions for the map
+// Prevent Panning just move to
+// Better random map, I think get random list each time would be better
+
+// leafMap.setView(pointList[0]);
+
+timer({ func: randomSamplePnt, tick: 2500, tock: 2500, stop: 99000, endFunc: test2 });
+
+function test2() {
+  console.log("Test2");
 }
 
 // ======================================================================
