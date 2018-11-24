@@ -95,46 +95,57 @@ function removeClass(tag, theClass) {
 // Map - Change Map
 // ======================================================================
 
-// function getLeafPnt(x, y) {
-//   return new L.LatLng(x, y);
-// }
+function getLeafPnt(x, y) {
+  return new L.LatLng(x, y);
+}
 
-// function panTo(pnt) {
-//   leafMap.panTo(pnt);
-// }
+function randomIntMinMax(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
-// function randomIntMinMax(min, max) {
-//   return Math.floor(Math.random() * (max - min + 1) + min);
-// }
+function getRandomCoord() {
+  const x = randomIntMinMax(49, 56);
+  const y = randomIntMinMax(-79, -125);
+  return getLeafPnt(x, y);
+}
 
-// function getRandomCoord() {
-//   const x = randomIntMinMax(46, 68);
-//   const y = randomIntMinMax(-56, -139);
-//   return getLeafPnt(x, y);
-// }
-
-// function getSampleRandomCoords() {
-//   const pointList = [];
-//   for (let i = 0; i < 7; i += 1) {
-//     const pnt = getRandomCoord();
-//     pointList.push(pnt);
-//   }
-//   return pointList;
-// }
+function leafletSetView(pnt) {
+  leafMap.setView(pnt, 9, true);
+}
 
 function randomSamplePnt() {
   const pnt = pointList[Math.floor(Math.random() * pointList.length)];
-  console.log(pnt);
-  leafMap.setView(pnt);
+  leafletSetView(pnt);
 }
 
-// const pointList = getSampleRandomCoords();
+function shuffle(array) {
+  let currentIndex = array.length;
+  let temporaryValue;
+  let randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex !== 0) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 leafMap.on("click", e => {
-  console.log(`Lat, Lon : [${e.latlng.lat}, ${e.latlng.lng}], `);
+  const pnt = getRandomCoord();
+  leafletSetView(pnt);
+  // Used for debugging
+  // console.log(`Lat, Lon : [${e.latlng.lat}, ${e.latlng.lng}], `);
 });
 
-const pointList = [
+let pointList = [
   [51.262485898428785, -68.74292437446594],
   [51.32145337655852, -68.9421481134463],
   [48.97540875705961, -68.4160813809419],
@@ -146,17 +157,13 @@ const pointList = [
   [43.73207342008998, -76.37292898908373]
 ];
 
-// CSS Transitions for the map
-// Prevent Panning just move to
-// Better random map, I think get random list each time would be better
-// clicking the maphead bring up new map
+// TODO If on mobile
 
-// leafMap.setView(pointList[0]);
+timer({ func: randomSamplePnt, tick: 2500, tock: 2500, stop: 22500, endFunc: reShuffle });
 
-timer({ func: randomSamplePnt, tick: 2500, tock: 2500, stop: 99000, endFunc: test2 });
-
-function test2() {
-  console.log("Test2");
+function reShuffle() {
+  pointList = shuffle(pointList);
+  timer({ func: randomSamplePnt, tick: 2500, tock: 2500, stop: 22500, endFunc: reShuffle });
 }
 
 // ======================================================================

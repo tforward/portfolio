@@ -167,18 +167,17 @@ General styles
   overflow: hidden;
   left: 3em;
   margin-bottom: 6em;
-  pointer-events: unset;
 }
 
 /* Places a Dot on the map, used for position of new locations off by default */
-.dot {
+/* .dot {
   position: absolute;
   width: 5px;
   height: 5px;
   background-color: black;
   top: 32.5vmin;
   left: 27vmin;
-}
+} */
 
 .maphead {
   width: 65vmin;
