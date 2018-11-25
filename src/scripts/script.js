@@ -67,8 +67,14 @@ function filterProjects(id) {
   if (id === "filter-projects") {
     removeClass("project", "hidden-project");
     addClass("fun", "hidden-project");
+    addClass("blog", "hidden-project");
   } else if (id === "filter-fun") {
     removeClass("fun", "hidden-project");
+    addClass("blog", "hidden-project");
+    addClass("project", "hidden-project");
+  } else if (id === "filter-blogs") {
+    removeClass("blog", "hidden-project");
+    addClass("fun", "hidden-project");
     addClass("project", "hidden-project");
   } else if (id === "filter-all") {
     removeClass("fun", "hidden-project");
@@ -95,6 +101,21 @@ function removeClass(tag, theClass) {
 // Map - Change Map
 // ======================================================================
 
+function runMapChanger() {
+  if (checkifMobile() === false) {
+    timer({ func: randomSamplePnt, tick: 2500, tock: 2500, stop: 22500, endFunc: reShuffle });
+  }
+}
+
+runMapChanger();
+
+function checkifMobile() {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    return true;
+  }
+  return false;
+}
+
 function getLeafPnt(x, y) {
   return new L.LatLng(x, y);
 }
@@ -118,26 +139,6 @@ function randomSamplePnt() {
   leafletSetView(pnt);
 }
 
-function shuffle(array) {
-  let currentIndex = array.length;
-  let temporaryValue;
-  let randomIndex;
-
-  // While there remain elements to shuffle...
-  while (currentIndex !== 0) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
-
 leafMap.on("click", e => {
   const pnt = getRandomCoord();
   leafletSetView(pnt);
@@ -157,9 +158,24 @@ let pointList = [
   [43.73207342008998, -76.37292898908373]
 ];
 
-// TODO If on mobile
+function shuffle(array) {
+  let currentIndex = array.length;
+  let temporaryValue;
+  let randomIndex;
 
-timer({ func: randomSamplePnt, tick: 2500, tock: 2500, stop: 22500, endFunc: reShuffle });
+  // While there remain elements to shuffle...
+  while (currentIndex !== 0) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
 
 function reShuffle() {
   pointList = shuffle(pointList);
