@@ -166,18 +166,5 @@ export function defineCards() {
     cardClass: "card card-calgaryMap project"
   });
 
-  card.cardArticleTemplateHtml = createCard({
-    elemId: "card-id-templateHtml",
-    title: "Article on fast HTML to DOM",
-    description: "Get HTML to the DOM fast with JS Template Literals & insertAdjacentHTML",
-    demoUrl:
-      "https://medium.com/@tforward/get-html-to-the-dom-fast-with-js-template-literals-insertadjacenthtml-24b8aa4e8807",
-    codeUrl: "",
-    imageName: "Article_TemplateLit",
-    imgClass: "card-img-portrait",
-    tools: "Template Literals, DOM Insertion",
-    cardClass: "card card-templateHtml blog"
-  });
-
   return card;
 }
