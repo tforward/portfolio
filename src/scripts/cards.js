@@ -157,7 +157,7 @@ export function defineCards() {
   card.cardCalgaryMap = createCard({
     elemId: "card-id-calgaryMap",
     title: "Calgary Population Density",
-    description: "Calgary Population Density 2014",
+    description: "Calgary Population Density",
     demoUrl: "http://tforward.github.io/calgary_pop_2014/",
     codeUrl: "https://github.com/tforward/calgary_pop_2014",
     imageName: "Calgary_2014_Pop",
