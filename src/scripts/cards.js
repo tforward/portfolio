@@ -11,10 +11,11 @@ const createCard = function card(data) {
   }" aria-label="Open demo of ${data.title}">
         <div class="card-img" style="background-image: url(../images/${data.imageName}.jpg)"></div>
       </a>
-    </div>
+    
     <div class="card-info center-text">
       <h4 class="card-title">${data.title}</h4>
       <h7 class="card-toolbox">${data.tools}</h7>
+    </div>
     </div>
     <div class="card-footer center">
       <a class="noTextDecoration" href="${data.codeUrl}" target="_blank" alt="View code for ${
@@ -40,7 +41,7 @@ export function defineCards() {
     description: "A Responsive Formula Expression Logic Calculator",
     demoUrl: "https://tforward.github.io/JSCalculator/",
     codeUrl: "https://github.com/tforward/JSCalculator",
-    tools: "CSS (Grid), JS (ESLint)",
+    tools: "CSS (Grid), JS (ESLint) A Responsive Formula Expression Logic Calculator",
     imageName: "calculator",
     imgClass: "card-img-portrait",
     cardClass: "card card-calc project"

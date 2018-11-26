@@ -67,12 +67,15 @@ function filterProjects(id) {
   if (id === "filter-projects") {
     removeClass("project", "hidden-project");
     addClass("fun", "hidden-project");
+    addClass("blog", "hidden-project");
   } else if (id === "filter-fun") {
     removeClass("fun", "hidden-project");
     addClass("project", "hidden-project");
+    addClass("blog", "hidden-project");
   } else if (id === "filter-all") {
     removeClass("fun", "hidden-project");
     removeClass("project", "hidden-project");
+    removeClass("blog", "hidden-project");
   }
 }
 
@@ -157,9 +160,30 @@ let pointList = [
   [43.73207342008998, -76.37292898908373]
 ];
 
-// TODO If on mobile
+// TODO
 
-timer({ func: randomSamplePnt, tick: 2500, tock: 2500, stop: 22500, endFunc: reShuffle });
+// - Add Article in
+// - Portfolio button jumping around fix
+// 	- I think just needs a default size on area below
+
+// - Card grow size based on content
+// - Code Btn hide
+// - Add in Time added
+
+function runMapChanger() {
+  if (checkifMobile() === false) {
+    timer({ func: randomSamplePnt, tick: 2500, tock: 2500, stop: 22500, endFunc: reShuffle });
+  }
+}
+
+runMapChanger();
+
+function checkifMobile() {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    return true;
+  }
+  return false;
+}
 
 function reShuffle() {
   pointList = shuffle(pointList);
