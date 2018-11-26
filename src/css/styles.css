@@ -336,10 +336,6 @@ General styles
   background-repeat: no-repeat;
 }
 
-.card-thumb:hover {
-  opacity: 0.93;
-}
-
 .card-info {
   position: relative;
   bottom: 0;
@@ -376,6 +372,7 @@ General styles
 .card-thumb:hover {
   position: relative;
   bottom: 1px;
+  opacity: 0.93;
 }
 
 .card-footer {
