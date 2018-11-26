@@ -168,7 +168,7 @@ let pointList = [
 
 // - Card grow size based on content
 // - Code Btn hide
-// - Add in Time added
+// - Add in Time added of projects added
 
 function runMapChanger() {
   if (checkifMobile() === false) {
