@@ -315,25 +315,29 @@ General styles
 .card {
   position: relative;
   width: 100%;
-
+  height: calc(25vmin + 12em);
   background-color: white;
  }
 
  .card-frame {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 67%;
   padding: 0.5em;
  }
 
+
 .card-img {
   position: relative;
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
 
+.card-thumb:hover {
+  opacity: 0.93;
 }
 
 .card-info {
@@ -372,7 +376,6 @@ General styles
 .card-thumb:hover {
   position: relative;
   bottom: 1px;
-  opacity: 0.93;
 }
 
 .card-footer {
@@ -434,7 +437,7 @@ General styles
     }
     
     .card-quote {
-      grid-column: span 1;
+      grid-column: span 2;
       grid-row: span 1;
     }
     
