@@ -21,7 +21,7 @@ myBase.initApplication = function init() {
   const card = defineCards();
   const projects = document.getElementById("projects");
   const projectsContainer = document.createElement("ul");
-  projectsContainer.className = "projects-grid card-list";
+  projectsContainer.className = "projects-grid cards";
 
   // Add all cards to the project container
   Object.keys(card).forEach(key => {
@@ -168,7 +168,7 @@ let pointList = [
 
 // - Card grow size based on content
 // - Code Btn hide
-// - Add in Time added of projects added
+// - Add in Time added of projects addednpm start
 
 function runMapChanger() {
   if (checkifMobile() === false) {

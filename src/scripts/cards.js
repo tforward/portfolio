@@ -2,31 +2,31 @@ import { ElemDelegator, FragmentDelegator } from "./olooElem";
 
 const createCard = function card(data) {
   // Just use the same syntax for node elements
-
-  const state = `<li class="${data.cardClass}">
-  <div id="${data.elemId}">
-    <div class="card-frame">
+  const state = `<li class="card-item ${data.cardClass}">
+    <div class="card ${data.elemId}">
+      <div class="card-frame">
       <a class="card-thumb" href="${data.demoUrl}" target="_blank" alt="Open demo of ${
     data.title
   }" aria-label="Open demo of ${data.title}">
-        <div class="card-img" style="background-image: url(../images/${data.imageName}.jpg)"></div>
-      </a>
-    
-    <div class="card-info center-text">
-      <h4 class="card-title">${data.title}</h4>
-      <h7 class="card-toolbox">${data.tools}</h7>
-    </div>
-    </div>
-    <div class="card-footer center">
-      <a class="noTextDecoration" href="${data.codeUrl}" target="_blank" alt="View code for ${
+        <div class="card-img center-auto" alt="Image of ${data.title}" style="background-image: url(../images/${
+    data.imageName
+  }.jpg)"></div>
+        </a>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">${data.title}</h3>
+        <p class="card-text">${data.tools}</p>
+        <a class="card-btn-link" target="_blank" aria-label="View code for ${data.codeUrl}">
+          <a class="noTextDecoration" href="${data.codeUrl}" target="_blank" alt="View code for ${
     data.codeUrl
   }" aria-label="View code for ${data.codeUrl}">
-        <div class="card-btn card-btn-text center">CODE</div>
-      </a>
-    </div>
-  </div>
-</li>`;
+            <div class="card-btn center-text">View Code</div>
+          </a>
+        </a>
+      </div>
+      </li>`;
 
+  //         <p class="card-text">Placeholder</p>
   // If you add an object to create it will show up on the __proto__
   // for that object, default null.
   return Object.assign(Object.create(null), ElemDelegator(state), FragmentDelegator(state));
@@ -44,7 +44,7 @@ export function defineCards() {
     tools: "CSS (Grid), JS (ESLint) A Responsive Formula Expression Logic Calculator",
     imageName: "calculator",
     imgClass: "card-img-portrait",
-    cardClass: "card card-calc project"
+    cardClass: "card-calc project"
   });
 
   card.cardPomodoro = createCard({
@@ -56,7 +56,7 @@ export function defineCards() {
     imageName: "pomodoro",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox, Grid), JS (ESLint, Webpack)",
-    cardClass: "card card-pomodoro project"
+    cardClass: "card-pomodoro project"
   });
 
   card.cardTwitch = createCard({
@@ -68,7 +68,7 @@ export function defineCards() {
     tools: "CSS (Flexbox), JS (ESLint, Webpack, Twitch API)",
     imageName: "twitch",
     imgClass: "card-img-landscape",
-    cardClass: "card card-twitch project"
+    cardClass: "card-twitch project"
   });
 
   card.cardGridImage = createCard({
@@ -80,7 +80,7 @@ export function defineCards() {
     imageName: "grid5x5",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox, Grid), JS (ESLint, Webpack)",
-    cardClass: "card card-gridImage fun"
+    cardClass: "card-gridImage fun"
   });
 
   card.cardTicTac = createCard({
@@ -92,7 +92,7 @@ export function defineCards() {
     imageName: "tictac",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox), JS (ESLint, Gulp)",
-    cardClass: "card card-tictac project"
+    cardClass: "card-tictac project"
   });
 
   card.cardSimon = createCard({
@@ -104,7 +104,7 @@ export function defineCards() {
     imageName: "simon",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox), JS (ESLint, Webpack)",
-    cardClass: "card card-simon project"
+    cardClass: "card-simon project"
   });
 
   card.cardLeafshoot = createCard({
@@ -116,7 +116,7 @@ export function defineCards() {
     imageName: "leafshoot",
     imgClass: "card-img-landscape",
     tools: "CSS (Bootstrap), JS (Leaflet)",
-    cardClass: "card card-leaf project"
+    cardClass: "card-leaf project"
   });
 
   card.cardQuote = createCard({
@@ -128,7 +128,7 @@ export function defineCards() {
     imageName: "quote",
     imgClass: "card-img-portrait",
     tools: "CSS, JS",
-    cardClass: "card card-quote project"
+    cardClass: "card-quote project"
   });
 
   card.cardCBC = createCard({
@@ -140,7 +140,7 @@ export function defineCards() {
     imageName: "cbc",
     imgClass: "card-img-portrait",
     tools: "CSS (Grid)",
-    cardClass: "card card-cbc fun"
+    cardClass: "card-cbc fun"
   });
 
   card.cardCutPolygon = createCard({
@@ -152,7 +152,7 @@ export function defineCards() {
     imageName: "cutPolygon",
     imgClass: "card-img-portrait",
     tools: "Python, ArcPy",
-    cardClass: "card card-cutPolygon project"
+    cardClass: "card-cutPolygon project"
   });
 
   card.cardCalgaryMap = createCard({
@@ -164,7 +164,7 @@ export function defineCards() {
     imageName: "Calgary_2014_Pop",
     imgClass: "card-img-portrait",
     tools: "Bootstrap, Leaflet, QGIS",
-    cardClass: "card card-calgaryMap project"
+    cardClass: "card-calgaryMap project"
   });
 
   return card;

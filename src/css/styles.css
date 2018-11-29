@@ -26,16 +26,22 @@ html {
 body {
   margin: 0;
   /* font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
 }
 
 img {
 	display: block;
-	width: auto;
+  max-width: 100%;
   height: auto;
+  vertical-align: middle;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 /*--------------------------------------------------------------
@@ -107,7 +113,7 @@ General styles
 
 .main-content {
 	background: white;
-  padding: 2em;
+  /* padding: 2em; */
   margin: 0 auto;
 }
 
@@ -285,114 +291,117 @@ General styles
                      Card, Thumbs and Btn
 --------------------------------------------------------------*/
 
-.card-list {
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 4vw;
   list-style-type: none;
 }
 
-.card-list li {
-  padding: 5px 0;
-  border-bottom: 1px solid black;
+.card-item {
+  display: flex;
+  flex: 1 1 auto;
+  padding: 1rem;
+  width: 100%;
+  padding: 1em;
+  /* border-bottom: 1px solid rgb(184, 184, 184); */
 }
 
-.card-list li:last-child {
+@media screen and (max-width: 300px) {
+  .cards {
+    padding: 1em 0.3em;
+  }
+}
+
+.card-item:last-child {
   border-bottom: none;
 }
 
-.card-title {
-  margin: 0 0 0 0;
-  padding: 0;
-  line-height: 1.3em;
-}
-
-.card-btn-text {
-  margin: .5em 0;
-  padding: 0;
-  font-weight: bold;
-}
-
 .card {
-  position: relative;
-  width: 100%;
-  height: calc(25vmin + 18em);
+  display: flex;
+  flex-direction: column;
   background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  width: 100%;
+}
+
+.card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1.6rem;
+  line-height: 1.45;
 }
 
 .card-frame {
-  position: relative;
+  height: calc(15vmin + 10em);
   width: 100%;
-  height: 67%;
-  padding: 0.5em;
 }
 
 .card-img {
-  position: relative;
-  min-height: 100%;
-  min-width: 100%;
-  background-size: contain;
+  height: 100%;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
+  border-top-left-radius: 0.35rem;
+  border-top-right-radius: 0.35rem;
+  position: relative;
 }
 
-.card-info {
+.card-img:hover {
   position: relative;
-  bottom: 0;
-  display: block;
-  width: 100%;
-  background-color: white;
+  opacity: 0.93;
 }
 
 .card-title {
-  margin: 0.1em 0.5em;
+  color: #696969;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.10rem;
+  text-transform: uppercase;
+  padding: 0 0 0.5rem 0;
 }
 
-.card-toolbox {
-  font-size: calc(0.7vmin + 0.6em);
-  margin: 0 1em;
+.card-text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  color: #776;
 }
 
 .card-btn {
-  height: calc(3vmin + 1em);
-  background-color: #79a6f6;
-  color: white;
-  font: inherit;
-  border: none; 
-	cursor: pointer;
-  padding: 0.6em 1.3em;
-  font-size: calc(1.3vmin + 0.5em);
-  font-weight: bold;
+  display: block;
+  background-color: white;
+  color: black;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 0.6rem 0rem;
+  width: 100%;
+  line-height: 1.3;
 }
 
 .card-btn:hover {
   background-color: #5392ff;
+  color: white;
+  font-weight: 700;
 }
 
-.card-thumb:hover {
-  position: relative;
-  bottom: 1px;
-  opacity: 0.93;
-}
-
-.card-footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-}
-
-/*--------------------------------------------------------------
+/*============================================================
       If no grid support, limit width and center align all
---------------------------------------------------------------*/
+==============================================================*/
 
 @supports not (display: grid) {
   .main-content {
-    max-width: 42em;
-    margin: 0 auto;
+    max-width: 32rem;
+    max-width: calc(42vmin + 12em);
   }
 
-  .card-list li {
+  .card-item {
     margin: .5em 0;
     padding: 1em 0;
   }
@@ -402,6 +411,8 @@ General styles
                        CSS Grid layout
 --------------------------------------------------------------*/
 
+/* // TODO  have to on small scales all cards goto span 1 */
+
 @supports (display: grid) {
   @media screen and (min-width: 600px) {
 
@@ -409,18 +420,22 @@ General styles
       max-width: 80%;
     }
     
-    .projects-grid {
+    .cards {
       display: grid;
-      grid-gap: 5vmin;
-      grid-template-columns: repeat(auto-fill, 1fr);
-      grid-auto-rows: minmax(100px, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       grid-auto-flow: row dense;
+      grid-gap: 1em;
+    }
+
+    .card-item {
+      grid-column: span 2;
     }
     
     .card-twitch {
-      grid-column: span 2;
+      grid-column: span 4;
       grid-row: span 1;
     }
+    /*
     
     .card-simon {
       grid-column: span 2;
@@ -440,11 +455,11 @@ General styles
     .card-9 {
       grid-column: span 2;
       grid-row: span 1;
-    }
+    } */
   }
 }
 
-@supports (display: grid) {
+/* @supports (display: grid) {
   @media screen and (min-width: 1100px) {
 
     .card-1 {
@@ -512,7 +527,7 @@ General styles
       grid-row: span 1;
     }
   }
-}
+} */
 
 /* FOOTER */
 
