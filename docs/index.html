@@ -1,0 +1,103 @@
+<html lang="en">
+
+<head>
+    <title>Portfolio: Tristan Forward</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Description" content="Author: Tristan Forward, Category: Portfolio">
+    <link rel="icon" href="favicon.ico">
+    <!--<link rel="stylesheet" href="app.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;**script-src 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval';** "> -->
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <header class="hero center" role="banner">
+        <section>
+            <div class="title-block" role="contentinfo">
+                <h1 class="title-name noSelect">Tristan Forward</h1>
+                <h2 class="title-desc noSelect">GIS Developer</h2>
+                <div class="title-info">
+                    <span>
+                        <a class="contact-link" href="mailto:tforward@gmail.com" target="_blank" rel="noopener"
+                            aria-label="Email Me">
+                            <i class="btn fas fa-envelope-square" alt="Email Me"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a class="contact-link" href="https://linkedin.com/in/tristanforward" target="_blank" rel="noopener"
+                            aria-label="View LinkedIn">
+                            <i class="btn fab fa-linkedin" alt="LinkedIn"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a class="contact-link" href="https://github.com/tforward" target="_blank" rel="noopener"
+                            aria-label="View GitHub">
+                            <i class="btn fab fa-github-square" alt="GitHub"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <div id="map" class="maphead-bg" class="noSelect" aria-hidden="true" role="presentation">
+
+                <div id="maphead" class="maphead" aria-hidden="true" alt="map" role="presentation">
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <div id="eventSandbox">
+        <div class="nav-down-frame center">
+            <div class="whiteArrow"></div>
+            <span>
+                <a href="#PortfolioStart" class="nav-down-link center" aria-label="Goto Projects">
+                    <i class="fas fa-caret-down nav-down"></i>
+                </a>
+            </span>
+        </div>
+        <section class="summary center">
+            <div id="PortfolioStart" class="sum-middle">
+                <h2>Portfolio</h2>
+                <div>
+                    <button id="filter-all" class="filter-btn filter-selected" value="All">ALL</button>
+                    <button id="filter-projects" class="filter-btn" value="Projects">PROJECTS</button>
+                    <button id="filter-blogs" class="filter-btn" value="Blogs">BLOGS</button>
+                    <button id="filter-fun" class="filter-btn" value="Fun">FUN</button>
+                </div>
+            </div>
+        </section>
+        <main id="projects" class="main-content" role="main">
+        </main>
+        <footer class="footer center">
+            <section class="links">
+                <span>
+                    <a class="contact-link" href="mailto:tforward@gmail.com" target="_blank" rel="noopener" aria-label="Email Me">
+                        <i class="btn fas fa-envelope-square" alt="Email Me"></i>
+                    </a>
+                </span>
+                <span>
+                    <a class="contact-link" href="https://linkedin.com/in/tristanforward" target="_blank" rel="noopener"
+                        aria-label="View LinkedIn">
+                        <i class="btn fab fa-linkedin" alt="LinkedIn"></i>
+                    </a>
+                </span>
+                <span>
+                    <a class="contact-link" href="https://github.com/tforward" target="_blank" rel="noopener"
+                        aria-label="View GitHub">
+                        <i class="btn fab fa-github-square" alt="GitHub"></i>
+                    </a>
+                </span>
+            </section>
+        </footer>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
+<script type="text/javascript" src="app.bundle.js"></script>
+
+</html>
