@@ -176,7 +176,8 @@ function runMapChanger() {
   }
 }
 
-runMapChanger();
+// TODO TEMP DISABLED
+// runMapChanger();
 
 function checkifMobile() {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
