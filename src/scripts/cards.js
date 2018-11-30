@@ -10,7 +10,7 @@ const createCard = function card(data) {
   }" aria-label="Open demo of ${data.title}">
         <div class="card-img center-auto" alt="Image of ${data.title}" style="background-image: url(../images/${
     data.imageName
-  }.jpg)"></div>
+  }.JPG)"></div>
         </a>
       </div>
       <div class="card-content">
