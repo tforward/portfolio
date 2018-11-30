@@ -8,7 +8,7 @@ const createCard = function card(data) {
       <a class="card-thumb" href="${data.demoUrl}" target="_blank" alt="Open demo of ${
     data.title
   }" aria-label="Open demo of ${data.title}">
-        <div class="card-img center-auto" alt="Image of ${data.title}" style="background-image: url(./images/${
+        <div class="card-img center-auto" alt="Image of ${data.title}" style="background-image: url(images/${
     data.imageName
   }.JPG)"></div>
         </a>
