@@ -8,9 +8,9 @@ const createCard = function card(data) {
       <a class="card-thumb" href="${data.demoUrl}" target="_blank" alt="Open demo of ${
     data.title
   }" aria-label="Open demo of ${data.title}">
-        <div class="card-img center-auto" alt="Image of ${data.title}" style="background-image: url(images/${
-    data.imageName
-  }.JPG)"></div>
+        <div class="card-img center-auto" alt="Image of ${data.title}" class="${
+    data.imgClass
+  }" style="background-image: url(images/${data.imageName}.JPG)"></div>
         </a>
       </div>
       <div class="card-content">
@@ -43,7 +43,7 @@ export function defineCards() {
     codeUrl: "https://github.com/tforward/JSCalculator",
     tools: "CSS (Grid), JS (ESLint) A Responsive Formula Expression Logic Calculator",
     imageName: "calculator",
-    imgClass: "card-img-portrait",
+    imgClass: "card-img-portrait img-calculator",
     cardClass: "card-calc project"
   });
 
@@ -161,7 +161,7 @@ export function defineCards() {
     description: "Calgary Population Density",
     demoUrl: "http://tforward.github.io/calgary_pop_2014/",
     codeUrl: "https://github.com/tforward/calgary_pop_2014",
-    imageName: "Calgary_2014_Pop",
+    imageName: "calgary_2014_pop",
     imgClass: "card-img-portrait",
     tools: "Bootstrap, Leaflet, QGIS",
     cardClass: "card-calgaryMap project"
