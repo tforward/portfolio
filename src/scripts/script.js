@@ -1,6 +1,6 @@
 "use strict";
 
-import png_ from "../images/maphead.svg";
+// import png_ from "../images/maphead.SVG";
 import normalise_ from "../../node_modules/normalize.css";
 import css_ from "../css/styles.css";
 import { EventDelegator, getTargetId } from "./olooEvent";
