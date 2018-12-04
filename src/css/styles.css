@@ -534,7 +534,7 @@ General styles
   padding: var(--padding);
   background-color: white;
   height: 10vh;
-  /* background: url("../images/topography.SVG"); */
+  background: url("../images/topography.SVG");
   background-color: #F9F1EA;
   z-index: -10;
 }

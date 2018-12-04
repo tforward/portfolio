@@ -16,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|svg)$/i,
         use: [
           {
             loader: "url-loader",
@@ -27,12 +27,16 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|SVG)$/,
+        test: /\.(png|jpe?g|gif|svg)$/,
         use: [
           "file-loader",
           {
             loader: "image-webpack-loader",
             options: {
+              options: {
+                name: "[name].[ext]",
+                outputPath: "images/"
+              },
               mozjpeg: {
                 progressive: true,
                 quality: 65
