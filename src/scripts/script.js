@@ -10,7 +10,7 @@ import { initmap } from "./leafletembed";
 import SmoothScroll from "./smooth-scroll.polyfills.min";
 import { timer } from "./timeIt";
 
-// const leafMap = initmap();
+const leafMap = initmap();
 
 const myBase = Object.create(null);
 const myApp = SubscribersDelegator();
