@@ -16,11 +16,11 @@ const createCard = function card(data) {
       <div class="card-content">
         <h3 class="card-title">${data.title}</h3>
         <p class="card-text">${data.tools}</p>
-        <a class="card-btn-link" target="_blank" aria-label="View code for ${data.codeUrl}">
-          <a class="noTextDecoration" href="${data.codeUrl}" target="_blank" alt="View code for ${
+        <a class="card-btn-link" target="_blank" aria-label="View ${data.type} for ${data.codeUrl}">
+          <a class="noTextDecoration" href="${data.codeUrl}" target="_blank" alt="View ${data.type} for ${
     data.codeUrl
-  }" aria-label="View code for ${data.codeUrl}">
-            <div class="card-btn center-text">View Code</div>
+  }" aria-label="View ${data.type} for ${data.codeUrl}">
+            <div class="card-btn center-text">View ${data.type}</div>
           </a>
         </a>
       </div>
@@ -35,6 +35,21 @@ const createCard = function card(data) {
 export function defineCards() {
   const card = Object.create(null);
 
+  card.cardTemplateLits = createCard({
+    elemId: "card-id-templateLits",
+    title: "JS Template Literals to the DOM",
+    description: "",
+    demoUrl:
+      "https://medium.com/@tforward/get-html-to-the-dom-fast-with-js-template-literals-insertadjacenthtml-24b8aa4e8807",
+    codeUrl:
+      "https://medium.com/@tforward/get-html-to-the-dom-fast-with-js-template-literals-insertadjacenthtml-24b8aa4e8807",
+    tools: "Medium Article about using Template Literials and DOM insertation with insertAdjacentHTML",
+    imageName: "templateLits",
+    imgClass: "card-img-portrait img-calculator",
+    cardClass: "card-templateLits article",
+    type: "Article"
+  });
+
   card.cardCalc = createCard({
     elemId: "card-id-calc",
     title: "Calculator",
@@ -44,7 +59,8 @@ export function defineCards() {
     tools: "CSS (Grid), JS (ESLint) A Responsive Formula Expression Logic Calculator",
     imageName: "calculator",
     imgClass: "card-img-portrait img-calculator",
-    cardClass: "card-calc project"
+    cardClass: "card-calc project",
+    type: "Code"
   });
 
   card.cardPomodoro = createCard({
@@ -56,7 +72,8 @@ export function defineCards() {
     imageName: "pomodoro",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox, Grid), JS (ESLint, Webpack)",
-    cardClass: "card-pomodoro project"
+    cardClass: "card-pomodoro project",
+    type: "Code"
   });
 
   card.cardTwitch = createCard({
@@ -68,7 +85,8 @@ export function defineCards() {
     tools: "CSS (Flexbox), JS (ESLint, Webpack, Twitch API)",
     imageName: "twitch",
     imgClass: "card-img-landscape",
-    cardClass: "card-twitch project"
+    cardClass: "card-twitch project",
+    type: "Code"
   });
 
   card.cardGridImage = createCard({
@@ -80,7 +98,8 @@ export function defineCards() {
     imageName: "grid5x5",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox, Grid), JS (ESLint, Webpack)",
-    cardClass: "card-gridImage fun"
+    cardClass: "card-gridImage fun",
+    type: "Code"
   });
 
   card.cardTicTac = createCard({
@@ -92,7 +111,8 @@ export function defineCards() {
     imageName: "tictac",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox), JS (ESLint, Gulp)",
-    cardClass: "card-tictac project"
+    cardClass: "card-tictac project",
+    type: "Code"
   });
 
   card.cardSimon = createCard({
@@ -104,7 +124,8 @@ export function defineCards() {
     imageName: "simon",
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox), JS (ESLint, Webpack)",
-    cardClass: "card-simon project"
+    cardClass: "card-simon project",
+    type: "Code"
   });
 
   card.cardLeafshoot = createCard({
@@ -116,7 +137,8 @@ export function defineCards() {
     imageName: "leafshoot",
     imgClass: "card-img-landscape",
     tools: "CSS (Bootstrap), JS (Leaflet)",
-    cardClass: "card-leaf project"
+    cardClass: "card-leaf project",
+    type: "Code"
   });
 
   card.cardQuote = createCard({
@@ -128,7 +150,8 @@ export function defineCards() {
     imageName: "quote",
     imgClass: "card-img-portrait",
     tools: "CSS, JS",
-    cardClass: "card-quote project"
+    cardClass: "card-quote project",
+    type: "Code"
   });
 
   card.cardCBC = createCard({
@@ -140,7 +163,8 @@ export function defineCards() {
     imageName: "cbc",
     imgClass: "card-img-portrait",
     tools: "CSS (Grid)",
-    cardClass: "card-cbc fun"
+    cardClass: "card-cbc fun",
+    type: "Code"
   });
 
   card.cardCutPolygon = createCard({
@@ -152,7 +176,8 @@ export function defineCards() {
     imageName: "cutPolygon",
     imgClass: "card-img-portrait",
     tools: "Python, ArcPy",
-    cardClass: "card-cutPolygon project"
+    cardClass: "card-cutPolygon project",
+    type: "Code"
   });
 
   card.cardCalgaryMap = createCard({
@@ -164,7 +189,8 @@ export function defineCards() {
     imageName: "calgary_2014_pop",
     imgClass: "card-img-portrait",
     tools: "Bootstrap, Leaflet, QGIS",
-    cardClass: "card-calgaryMap project"
+    cardClass: "card-calgaryMap project",
+    type: "Code"
   });
 
   return card;

@@ -60,15 +60,19 @@ function filterProjects(id) {
   if (id === "filter-projects") {
     removeClass("project", "hidden-project");
     addClass("fun", "hidden-project");
-    addClass("blog", "hidden-project");
+    addClass("article", "hidden-project");
   } else if (id === "filter-fun") {
     removeClass("fun", "hidden-project");
     addClass("project", "hidden-project");
-    addClass("blog", "hidden-project");
+    addClass("article", "hidden-project");
+  } else if (id === "filter-articles") {
+    removeClass("article", "hidden-project");
+    addClass("project", "hidden-project");
+    addClass("fun", "hidden-project");
   } else if (id === "filter-all") {
     removeClass("fun", "hidden-project");
     removeClass("project", "hidden-project");
-    removeClass("blog", "hidden-project");
+    removeClass("article", "hidden-project");
   }
 }
 
@@ -153,14 +157,7 @@ let pointList = [
 ];
 
 // TODO
-
-// - Add Article in
-// - Portfolio button jumping around fix
-// 	- I think just needs a default size on area below
-
-// - Card grow size based on content
-// - Code Btn hide
-// - Add in Time added of projects addednpm start
+// - Add in Time added of projects added
 
 function runMapChanger() {
   if (checkifMobile() === false) {
