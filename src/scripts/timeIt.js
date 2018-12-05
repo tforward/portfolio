@@ -1,12 +1,5 @@
 "use strict";
 
-// TODO on start function?
-
-// myApp.main = function main() {
-//   // All values are in ms
-//   timer({ func: changeClock, tick: 1000, tock: 1000, stop: 5000, endFunc: endFunction });
-// };
-
 export function timer(args) {
   // Tick: How often in ms to call the function
   // Tock: Duration between ticks in ms, for example
@@ -24,7 +17,7 @@ function timerUtil(func, tick, tock, time, stop, endFunc, initTime) {
   // stop + tock will cause one more function call to fire
   if (time >= stop + tock) {
     endFunc();
-    console.log(`Accuracte within: ${time - stop - tock} ms`);
+    // console.log(`Accuracte within: ${time - stop - tock} ms`);
     return;
   }
   // Tick Timer ahead by Tock and call the function each time

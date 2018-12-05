@@ -1,10 +1,8 @@
 "use strict";
 
-// import png_ from "../images/maphead.SVG";
 import normalise_ from "../../node_modules/normalize.css";
 import css_ from "../css/styles.css";
 import { EventDelegator, getTargetId } from "./olooEvent";
-import { SubscribersDelegator } from "./olooObserver";
 import { defineCards } from "./cards";
 import { initmap } from "./leafletembed";
 import SmoothScroll from "./smooth-scroll.polyfills.min";
@@ -13,11 +11,8 @@ import { timer } from "./timeIt";
 const leafMap = initmap();
 
 const myBase = Object.create(null);
-const myApp = SubscribersDelegator();
 
 myBase.initApplication = function init() {
-  myApp.init();
-
   const card = defineCards();
   const projects = document.getElementById("projects");
   const projectsContainer = document.createElement("ul");
@@ -31,8 +26,6 @@ myBase.initApplication = function init() {
   // Add project container to the DOM
   projects.appendChild(projectsContainer);
 
-  // TODO LATER Create a function to semi randomly order the projects or similar
-
   const eventSandbox = EventDelegator();
   eventSandbox.initEvent("eventSandbox", "click", { tags: ["BUTTON"] });
   eventSandbox.addEvent(eventController);
@@ -42,7 +35,7 @@ myBase.initApplication = function init() {
     if (id !== undefined) {
       if (id.startsWith("filter")) {
         filterProjectsBtn(id);
-        console.log(id);
+        // console.log(id);
       }
     }
   }
@@ -81,7 +74,6 @@ function filterProjects(id) {
 
 function addClass(tag, theClass) {
   const projectList = document.getElementsByClassName(tag);
-  console.log(projectList);
   for (let i = 0; i < projectList.length; i += 1) {
     projectList[i].classList.add(theClass);
   }
@@ -176,8 +168,7 @@ function runMapChanger() {
   }
 }
 
-// TODO TEMP DISABLED
-// runMapChanger();
+runMapChanger();
 
 function checkifMobile() {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
