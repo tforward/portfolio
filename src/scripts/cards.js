@@ -47,7 +47,8 @@ export function defineCards() {
     imageName: "templateLits",
     imgClass: "card-img-portrait img-calculator",
     cardClass: "card-templateLits article",
-    type: "Article"
+    type: "Article",
+    date: "2018/20/11"
   });
 
   card.cardCalc = createCard({
@@ -60,7 +61,8 @@ export function defineCards() {
     imageName: "calculator",
     imgClass: "card-img-portrait img-calculator",
     cardClass: "card-calc project",
-    type: "Code"
+    type: "Code",
+    date: "2018/03/01"
   });
 
   card.cardPomodoro = createCard({
@@ -73,7 +75,8 @@ export function defineCards() {
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox, Grid), JS (ESLint, Webpack)",
     cardClass: "card-pomodoro project",
-    type: "Code"
+    type: "Code",
+    date: "2018/06/01"
   });
 
   card.cardTwitch = createCard({
@@ -86,7 +89,8 @@ export function defineCards() {
     imageName: "twitch",
     imgClass: "card-img-landscape",
     cardClass: "card-twitch project",
-    type: "Code"
+    type: "Code",
+    date: "2018/06/01"
   });
 
   card.cardGridImage = createCard({
@@ -99,7 +103,8 @@ export function defineCards() {
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox, Grid), JS (ESLint, Webpack)",
     cardClass: "card-gridImage fun",
-    type: "Code"
+    type: "Code",
+    date: "2018/05/01"
   });
 
   card.cardTicTac = createCard({
@@ -112,7 +117,8 @@ export function defineCards() {
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox), JS (ESLint, Gulp)",
     cardClass: "card-tictac project",
-    type: "Code"
+    type: "Code",
+    date: "2018/07/01"
   });
 
   card.cardSimon = createCard({
@@ -125,7 +131,8 @@ export function defineCards() {
     imgClass: "card-img-portrait",
     tools: "CSS (Flexbox), JS (ESLint, Webpack)",
     cardClass: "card-simon project",
-    type: "Code"
+    type: "Code",
+    date: "2018/06/01"
   });
 
   card.cardLeafshoot = createCard({
@@ -138,7 +145,8 @@ export function defineCards() {
     imgClass: "card-img-landscape",
     tools: "CSS (Bootstrap), JS (Leaflet)",
     cardClass: "card-leaf project",
-    type: "Code"
+    type: "Code",
+    date: "2016/06/01"
   });
 
   card.cardQuote = createCard({
@@ -151,7 +159,8 @@ export function defineCards() {
     imgClass: "card-img-portrait",
     tools: "CSS, JS",
     cardClass: "card-quote project",
-    type: "Code"
+    type: "Code",
+    date: "2017/12/01"
   });
 
   card.cardCBC = createCard({
@@ -164,7 +173,8 @@ export function defineCards() {
     imgClass: "card-img-portrait",
     tools: "CSS (Grid)",
     cardClass: "card-cbc fun",
-    type: "Code"
+    type: "Code",
+    date: "2018/07/01"
   });
 
   card.cardCutPolygon = createCard({
@@ -177,7 +187,8 @@ export function defineCards() {
     imgClass: "card-img-portrait",
     tools: "Python, ArcPy",
     cardClass: "card-cutPolygon project",
-    type: "Code"
+    type: "Code",
+    date: "2018/08/01"
   });
 
   card.cardCalgaryMap = createCard({
@@ -190,8 +201,36 @@ export function defineCards() {
     imgClass: "card-img-portrait",
     tools: "Bootstrap, Leaflet, QGIS",
     cardClass: "card-calgaryMap project",
-    type: "Code"
+    type: "Code",
+    date: "2018/02/26"
   });
+
+  card.cardCalgaryMap = createCard({
+    elemId: "card-id-EscherMeta",
+    title: "M. C. Escher Metamorphosis II (1940) Animated",
+    description: "Metamorphosis II animated using keyframes",
+    demoUrl: "https://codepen.io/tforward/full/awoYJw/",
+    codeUrl: "https://codepen.io/tforward/pen/awoYJw",
+    imageName: "escher_meta",
+    imgClass: "card-img-portrait",
+    tools: "CSS Keyframes",
+    cardClass: "card-escherMetamorphosis fun",
+    type: "Code",
+    date: "2018/02/26"
+  });
+
+  // card.MCEscher = createCard({
+  //   elemId: "card-id-McEther",
+  //   title: "M.C. Escher Timeline",
+  //   description: "Artist M.C Escher Biography Timeline",
+  //   demoUrl: "https://codepen.io/tforward/full/NjQeGd/",
+  //   codeUrl: "https://codepen.io/tforward/pen/NjQeGd",
+  //   imageName: "calgary_2014_pop",
+  //   imgClass: "card-img-portrait",
+  //   tools: "Bootstrap, Leaflet, QGIS",
+  //   cardClass: "card-calgaryMap project",
+  //   type: "Code"
+  // });
 
   return card;
 }
