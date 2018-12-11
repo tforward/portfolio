@@ -100,7 +100,6 @@ General styles
 
 .main-content {
 	background: white;
-  margin: 0 auto;
 }
 
 .pad1 {
@@ -397,10 +396,10 @@ General styles
 ==============================================================*/
 
 @supports (display: grid) {
-  @media screen and (min-width: 300px) {
+  @media screen and (min-width: 340px) {
 
     .main-content {
-      max-width: 80%;
+      max-width: 100%;
     }
     
     .cards {
