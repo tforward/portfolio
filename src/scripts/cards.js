@@ -26,7 +26,6 @@ const createCard = function card(data) {
       </div>
       </li>`;
 
-  //         <p class="card-text">Placeholder</p>
   // If you add an object to create it will show up on the __proto__
   // for that object, default null.
   return Object.assign(Object.create(null), ElemDelegator(state), FragmentDelegator(state));
@@ -43,7 +42,7 @@ export function defineCards() {
       "https://medium.com/@tforward/get-html-to-the-dom-fast-with-js-template-literals-insertadjacenthtml-24b8aa4e8807",
     codeUrl:
       "https://medium.com/@tforward/get-html-to-the-dom-fast-with-js-template-literals-insertadjacenthtml-24b8aa4e8807",
-    tools: "Medium Article about using Template Literials and DOM insertation with insertAdjacentHTML",
+    tools: "Medium Article about using Template Literials and DOM insertion with insertAdjacentHTML",
     imageName: "templateLits",
     imgClass: "card-img-portrait img-calculator",
     cardClass: "card-templateLits article",
