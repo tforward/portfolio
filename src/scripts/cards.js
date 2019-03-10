@@ -34,6 +34,20 @@ const createCard = function card(data) {
 export function defineCards() {
   const card = Object.create(null);
 
+  card.wikiMap = createCard({
+    elemId: "card-id-wikiMap",
+    title: "WikiMap",
+    description: "A Wikipedia Map Viewer",
+    demoUrl: "https://tforward.github.io/wikiMap/",
+    codeUrl: "https://github.com/tforward/wikiMap",
+    tools: "Wikipedia Map Viewer. Build with CSS (Flexbox), JS (Ramda)",
+    imageName: "wikiMap",
+    imgClass: "card-img-portrait",
+    cardClass: "card-wikiMap project",
+    type: "Code",
+    date: "2019/03/10"
+  });
+
   card.cardTemplateLits = createCard({
     elemId: "card-id-templateLits",
     title: "JS Template Literals to the DOM",
@@ -44,7 +58,7 @@ export function defineCards() {
       "https://medium.com/@tforward/get-html-to-the-dom-fast-with-js-template-literals-insertadjacenthtml-24b8aa4e8807",
     tools: "Medium Article about using Template Literials and DOM insertion with insertAdjacentHTML",
     imageName: "templateLits",
-    imgClass: "card-img-portrait img-calculator",
+    imgClass: "card-img-portrait",
     cardClass: "card-templateLits article",
     type: "Article",
     date: "2018/20/11"
